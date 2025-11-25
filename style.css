@@ -1,0 +1,72 @@
+.slider-track {
+    display: flex;
+    width: 300%;
+    height: 100%;
+    animation: slide-animation 15s infinite ease-in-out;
+}
+
+.slide {
+    width: 33.333%;
+    flex-shrink: 0;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+}
+
+.slide-1 {
+    background-image: url('https://mute-lime-dglcpxiz3t.edgeone.app/images%20(24).jpeg');
+    background-position: top center;
+}
+
+.slide-2 {
+    background-image: url('https://competitive-crimson-govao8p8qv.edgeone.app/premium_photo-1663075817635-90ecf218ee5f.jpeg');
+}
+
+.slide-3 {
+    background-image: url('https://front-ivory-qp3m06xdp3.edgeone.app/IMG-6176.jpg');
+}
+
+@keyframes slide-animation {
+    0% { transform: translateX(0%); }
+    28% { transform: translateX(0%); }
+    33.33% { transform: translateX(-33.333%); }
+    61.33% { transform: translateX(-33.333%); }
+    66.66% { transform: translateX(-66.666%); }
+    95% { transform: translateX(-66.666%); }
+    100% { transform: translateX(0%); }
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    background-color: #888;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+}
+
+.dots-container {
+    animation: dot-highlight 15s infinite ease-in-out;
+}
+
+@keyframes dot-highlight {
+    0%, 30% { transform: translateX(0%); }
+    33.33%, 63.33% { transform: translateX(-16px); }
+    66.66%, 98% { transform: translateX(-32px); }
+    100% { transform: translateX(0%); }
+}
+
+.dot-wrapper > div:nth-child(1) {
+    background-color: var(--dot-color, #c89f3e);
+    box-shadow: 0 0 5px #c89f3e;
+}
+
+.language-dropdown-content {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.language-selector:hover .language-dropdown-content {
+    display: block;
+    opacity: 1;
+}
