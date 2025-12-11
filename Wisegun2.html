@@ -3,33 +3,134 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WISE GUN - Page 2</title>
-    <link rel="stylesheet" href="styles.css"> 
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <title>Wise Gun - What is it all about</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'dark-bg': '#262626',
+                        'darker-bg': '#1a1a1a',
+                        'accent-gold': '#c89f3e', 
+                        'light-text': '#e0e0e0',
+                    },
+                }
+            }
+        }
+    </script>
+
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
 
-    <div class="page-container">
-        
-        <header class="header">
-            <div class="logo">WISE GUN</div>
+<body class="bg-darker-bg font-sans min-h-screen flex flex-col">
+
+    <header class="sticky top-0 z-20 bg-dark-bg text-light-text shadow-xl">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
             
-            <nav class="main-nav"> 
-                <a href="index.html" class="nav-link">Home (Page 1)</a>
-                <a href="Wisegun2.html" class="nav-link active">What You Can Explore (Page 2)</a>
-            </nav>
+            <a href="index.html" class="text-xl font-bold tracking-wider text-accent-gold">WISE GUN</a>
 
-            <div class="search-menu">
-                <button class="icon-btn search-btn">🔍</button>
-                <button class="icon-btn menu-btn">☰</button>
+            <div class="flex items-center space-x-4">
+
+                <nav class="hidden md:flex space-x-6 text-sm font-medium">
+                    <a href="index.html" class="text-light-text hover:text-accent-gold transition-colors">Home</a> 
+                    <a href="Wisegun2.html" class="text-accent-gold hover:text-light-text transition-colors">What is it all about</a> 
+                </nav>
+
+                <div class="relative group language-selector hidden sm:block">
+                    <button class="flex items-center space-x-1 p-2 rounded-lg hover:bg-darker-bg transition-colors text-light-text text-sm">
+                        <i data-lucide="globe" class="w-4 h-4 text-accent-gold"></i>
+                        <span>EN</span>
+                    </button>
+                    <div class="language-dropdown-content absolute right-0 top-full mt-2 w-28 rounded-lg bg-darker-bg border border-dark-bg shadow-xl z-30 overflow-hidden">
+                        <ul class="text-light-text divide-y divide-dark-bg">
+                            <li><a href="#" class="block p-2 hover:bg-dark-bg transition-colors">English (EN)</a></li>
+                            <li><a href="#" class="block p-2 hover:bg-dark-bg transition-colors">Tagalog (PH)</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <a href="#" class="py-2 px-4 bg-accent-gold text-darker-bg font-semibold rounded-lg shadow-md hover:bg-opacity-90 transition-colors text-sm">
+                    Log In / Sign Up
+                </a>
+
+                <div class="relative group">
+                    <button class="p-2 rounded-full hover:bg-darker-bg transition-colors">
+                        <i data-lucide="search" class="w-6 h-6 text-accent-gold"></i>
+                    </button>
+                    <input type="text" placeholder="Search..."
+                        class="absolute right-0 top-full mt-2 w-48 p-2 rounded-lg bg-darker-bg border border-accent-gold text-light-text opacity-0 transition-opacity duration-300 group-hover:opacity-100 focus:opacity-100 z-30 shadow-lg">
+                </div>
+
+                <div class="relative group">
+                    <button class="p-2 rounded-full hover:bg-darker-bg transition-colors">
+                        <i data-lucide="menu" class="w-6 h-6 text-accent-gold"></i>
+                    </button>
+                    <nav class="absolute right-0 top-full mt-2 w-48 rounded-lg bg-darker-bg border border-dark-bg shadow-xl opacity-0 transition-opacity duration-300 group-hover:opacity-100 focus-within:opacity-100 z-30">
+                        <ul class="text-light-text divide-y divide-dark-bg">
+                            <li><a href="index.html" class="block p-3 hover:bg-dark-bg transition-colors rounded-t-lg">Home</a></li>
+                            <li><a href="Wisegun2.html" class="block p-3 hover:bg-dark-bg transition-colors">What is it all about</a></li>
+                            <li><a href="#" class="block p-3 hover:bg-dark-bg transition-colors">Safety</a></li>
+                            <li><a href="#" class="block p-3 hover:bg-dark-bg transition-colors rounded-b-lg">Registration</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
             </div>
-        </header>
+        </div>
+    </header>
 
-        <section class="page-2-content" style="padding: 100px 0;">
-            <h1 style="font-size: 3rem; margin-bottom: 30px; color: var(--color-primary);">What You Can Explore</h1>
-            <p style="font-size: 1.2rem; color: #aaa;">Dito po natin ilalagay ang "What you can explore," "Before you handle a gun," at "Gun shops" sections.</p>
+    <main class="flex-grow w-full">
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16">
             
-            </section>
+            <h2 class="text-3xl font-bold uppercase text-accent-gold mb-8">what is it all about</h2>
+            
+            <div class="flex flex-col md:flex-row gap-8 items-start">
+                
+                <div class="md:w-5/12">
+                    <p class="text-sm text-gray-400 leading-relaxed text-justify">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+                </div>
+                
+                <div class="md:w-7/12 flex gap-4">
+                    <div class="about-img left flex-1 min-h-[250px] bg-gray-700 rounded-lg" 
+                         style="background-image: url('wise-gun-shop-1.jpg'); background-size: cover; background-position: center;">
+                    </div>
+                    <div class="about-img right flex-1 min-h-[250px] bg-gray-700 rounded-lg" 
+                         style="background-image: url('wise-gun-shop-2.jpg'); background-size: cover; background-position: center;">
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+        </main>
 
-    </div> </body>
-</html>
+    <footer class="bg-dark-bg mt-12 py-8 text-light-text">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-sm mb-2 text-gray-400">
+                &copy; WISE GUN 2025 | Promoting Safe and Legal Firearm Ownership.
+            </p>
+            <div class="text-xs text-gray-400 space-y-1">
+                <p>Contact: wise.gun.info@gmail.com | Facebook: @WiseGunPH</p>
+                <div class="flex justify-center space-x-4 pt-2">
+                    <a href="index.html" class="text-accent-gold hover:text-light-text transition-colors text-sm">Home</a>
+                    <span class="text-gray-500">|</span>
+                    <a href="Wisegun2.html" class="text-accent-gold hover:text-light-text transition-colors text-sm">About</a>
+                    <span class="text-gray-500">|</span>
+                    <a href="#" class="text-accent-gold hover:text-light-text transition-colors text-sm">Privacy Policy</a>
+                    <span class="text-gray-500">|</span>
+                    <a href="#" class="text-accent-gold hover:text-light-text transition-colors text-sm">Terms of Use</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+                    </html>
