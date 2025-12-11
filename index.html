@@ -13,17 +13,11 @@
             theme: {
                 extend: {
                     colors: {
-        
                         'dark-bg': '#262626',
                         'darker-bg': '#1a1a1a',
-                        'accent-gold': '#c89f3e',
+                        'accent-gold': '#c89f3e', 
                         'light-text': '#e0e0e0',
                     },
-                    fontFamily: {
-                        
-                        sans: ['Inter', 'sans-serif'], 
-                        serif: ['Georgia', 'serif'],
-                    }
                 }
             }
         }
@@ -37,20 +31,20 @@
     <header class="sticky top-0 z-20 bg-dark-bg text-light-text shadow-xl">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
             
-            <a href="#" class="text-xl font-bold tracking-wider text-accent-gold">WISE GUN</a>
+            <a href="index.html" class="text-xl font-bold tracking-wider text-accent-gold">WISE GUN</a>
 
             <div class="flex items-center space-x-4">
 
                 <nav class="hidden md:flex space-x-6 text-sm font-medium">
                     <a href="index.html" class="text-accent-gold hover:text-light-text transition-colors">Home</a> 
-                    <a href="Wisegun2.html" class="text-light-text hover:text-accent-gold transition-colors">What You Can Explore</a> 
+                    <a href="Wisegun2.html" class="text-light-text hover:text-accent-gold transition-colors">What is it all about</a> 
                 </nav>
+
                 <div class="relative group language-selector hidden sm:block">
                     <button class="flex items-center space-x-1 p-2 rounded-lg hover:bg-darker-bg transition-colors text-light-text text-sm">
                         <i data-lucide="globe" class="w-4 h-4 text-accent-gold"></i>
                         <span>EN</span>
                     </button>
-
                     <div class="language-dropdown-content absolute right-0 top-full mt-2 w-28 rounded-lg bg-darker-bg border border-dark-bg shadow-xl z-30 overflow-hidden">
                         <ul class="text-light-text divide-y divide-dark-bg">
                             <li><a href="#" class="block p-2 hover:bg-dark-bg transition-colors">English (EN)</a></li>
@@ -68,7 +62,6 @@
                     <button class="p-2 rounded-full hover:bg-darker-bg transition-colors">
                         <i data-lucide="search" class="w-6 h-6 text-accent-gold"></i>
                     </button>
-
                     <input type="text" placeholder="Search..."
                         class="absolute right-0 top-full mt-2 w-48 p-2 rounded-lg bg-darker-bg border border-accent-gold text-light-text opacity-0 transition-opacity duration-300 group-hover:opacity-100 focus:opacity-100 z-30 shadow-lg">
                 </div>
@@ -77,11 +70,10 @@
                     <button class="p-2 rounded-full hover:bg-darker-bg transition-colors">
                         <i data-lucide="menu" class="w-6 h-6 text-accent-gold"></i>
                     </button>
-
                     <nav class="absolute right-0 top-full mt-2 w-48 rounded-lg bg-darker-bg border border-dark-bg shadow-xl opacity-0 transition-opacity duration-300 group-hover:opacity-100 focus-within:opacity-100 z-30">
                         <ul class="text-light-text divide-y divide-dark-bg">
                             <li><a href="index.html" class="block p-3 hover:bg-dark-bg transition-colors rounded-t-lg">Home</a></li>
-                            <li><a href="Wisegun2.html" class="block p-3 hover:bg-dark-bg transition-colors">What You Can Explore</a></li>
+                            <li><a href="Wisegun2.html" class="block p-3 hover:bg-dark-bg transition-colors">What is it all about</a></li>
                             <li><a href="#" class="block p-3 hover:bg-dark-bg transition-colors">Safety</a></li>
                             <li><a href="#" class="block p-3 hover:bg-dark-bg transition-colors rounded-b-lg">Registration</a></li>
                         </ul>
@@ -94,22 +86,19 @@
 
     <main class="flex-grow w-full">
         <section class="relative w-full overflow-hidden max-w-7xl mx-auto rounded-xl shadow-2xl mt-4">
-
             <div class="h-[60vh] md:h-[70vh] relative">
-
                 <div class="slider-track absolute top-0 left-0">
                     
                     <div class="slide slide-1">
                         <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center p-8 sm:p-16">
                             <div class="max-w-lg">
-                                <h1 class="text-5xl md:text-6xl font-serif font-bold mb-4 text-accent-gold tracking-tighter">WISE GUN</h1>
-                                <p class="text-xl md:text-2xl text-light-text font-serif italic leading-relaxed">
+                                <h1 class="text-5xl md:text-6xl font-bold mb-4 text-accent-gold tracking-tighter">WISE GUN</h1>
+                                <p class="text-xl md:text-2xl text-light-text italic leading-relaxed">
                                     a reliable companion for guiding in buying and registering a gun.
                                 </p>
                             </div>
                         </div>
                     </div>
-
                     <div class="slide slide-2">
                         <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center p-8 sm:p-16">
                             <div class="max-w-lg">
@@ -120,7 +109,6 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="slide slide-3">
                         <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center p-8 sm:p-16">
                             <div class="max-w-lg">
@@ -142,14 +130,8 @@
                         <div class="dot bg-light-text opacity-40"></div>
                     </div>
                 </div>
-
             </div>
-
         </section>
-
-        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 pb-12">
-            </section>
-
     </main>
 
     <footer class="bg-dark-bg mt-12 py-8 text-light-text">
@@ -162,7 +144,7 @@
                 <div class="flex justify-center space-x-4 pt-2">
                     <a href="index.html" class="text-accent-gold hover:text-light-text transition-colors text-sm">Home</a>
                     <span class="text-gray-500">|</span>
-                    <a href="Wisegun2.html" class="text-accent-gold hover:text-light-text transition-colors text-sm">Explore</a>
+                    <a href="Wisegun2.html" class="text-accent-gold hover:text-light-text transition-colors text-sm">About</a>
                     <span class="text-gray-500">|</span>
                     <a href="#" class="text-accent-gold hover:text-light-text transition-colors text-sm">Privacy Policy</a>
                     <span class="text-gray-500">|</span>
@@ -174,7 +156,6 @@
 
     <script>
         lucide.createIcons();
-        
     </script>
 </body>
-                            </html>
+                                                                      </html>
