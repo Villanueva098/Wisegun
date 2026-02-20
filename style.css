@@ -14,19 +14,9 @@
     background-position: center;
 }
 
-
-.slide-1 {
-    background-image: url('https://mute-lime-dglcpxiz3t.edgeone.app/images%20(24).jpeg');
-    background-position: top center;
-}
-
-.slide-2 {
-    background-image: url('https://competitive-crimson-govao8p8qv.edgeone.app/premium_photo-1663075817635-90ecf218ee5f.jpeg');
-}
-
-.slide-3 {
-    background-image: url('https://front-ivory-qp3m06xdp3.edgeone.app/IMG-6176.jpg');
-}
+.slide-1 { background-image: url('https://mute-lime-dglcpxiz3t.edgeone.app/images%20(24).jpeg'); background-position: top center; }
+.slide-2 { background-image: url('https://competitive-crimson-govao8p8qv.edgeone.app/premium_photo-1663075817635-90ecf218ee5f.jpeg'); }
+.slide-3 { background-image: url('https://front-ivory-qp3m06xdp3.edgeone.app/IMG-6176.jpg'); }
 
 @keyframes slide-animation {
     0% { transform: translateX(0%); }
@@ -47,7 +37,6 @@
 }
 
 .dots-container {
-    
     animation: dot-highlight 15s infinite ease-in-out;
     width: 10px; 
     height: 10px;
@@ -55,20 +44,66 @@
 }
 
 @keyframes dot-highlight {
-    
-    
     0%, 30% { transform: translateX(0px); }
-    33.33%, 63.33% { transform: translateX(12px); } 
-    66.66%, 98% { transform: translateX(24px); } 
+    33.33%, 63.33% { transform: translateX(18px); } 
+    66.66%, 98% { transform: translateX(36px); } 
     100% { transform: translateX(0px); }
 }
 
 .dot-wrapper > .dots-container {
-    background-color: var(--dot-color, #c89f3e);
+    background-color: var(--dot-color, #c89f3e) !important;
     box-shadow: 0 0 5px #c89f3e;
 }
 
 
+.bg-rules-gold {
+    background-color: #f3cc7a;
+}
+.rules-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #333;
+}
+
+.rules-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+
+.rules-card-top {
+    height: 160px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #262626;
+    border-bottom: 2px solid #c89f3e;
+}
+
+/* The tilted icon box from your image */
+.tilted-icon-box {
+    background-color: #f3cc7a;
+    padding: 10px;
+    transform: rotate(45deg);
+    margin-bottom: 12px;
+}
+
+.tilted-icon-box i {
+    transform: rotate(-45deg);
+    color: #1a1a1a;
+}
+
+/* Typography for Rules */
+.rules-title {
+    font-family: 'sans-serif';
+    font-weight: 900;
+    text-transform: uppercase;
+    font-style: italic;
+    color: #1a1a1a;
+    letter-spacing: -0.02em;
+}
+
+/* --- LANGUAGE SELECTOR & EXTRAS --- */
 .language-dropdown-content {
     display: none;
     opacity: 0;
@@ -78,81 +113,4 @@
 .language-selector:hover .language-dropdown-content {
     display: block;
     opacity: 1;
-}
-
-
-.explore-card-img {
-    height: 150px; 
-    background-size: cover;
-    background-position: center;
-    background-color: #333; 
-    border-top-left-radius: 0.5rem; 
-    border-top-right-radius: 0.5rem;
-}
-
-
-.explore-card-img.register {
-    background-image: url('explore-register.jpg'); 
-}
-
-.explore-card-img.locate {
-    background-image: url('explore-locate.jpg'); 
-}
-
-.explore-card-img.suggested {
-    background-image: url('explore-suggested.jpg'); 
-}
-
-
-.compliance-box {
-    min-height: 250px; 
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    background-size: cover;
-    background-position: center;
-    border-radius: 0.5rem;
-    padding: 1rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
-    position: relative;
-    overflow: hidden;
-}
-
-
-.compliance-box::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.1));
-    z-index: 1;
-}
-
-.compliance-box h3, .compliance-box p {
-    z-index: 2;
-}
-
-
-.compliance-box.safety {
-    background-image: url('compliance-safety.jpg'); 
-    border-left: 5px solid #ffdd00;
-}
-
-.compliance-box.legal {
-    background-image: url('compliance-legal.jpg'); 
-    border-left: 5px solid var(--accent-gold); 
-}
-
-.compliance-box.responsible {
-    background-image: url('compliance-responsible.jpg'); 
-    border-left: 5px solid #00aaff;
-}
-
-
-.map-container {
-    height: 400px; 
-    background-color: #333;
-    background-size: cover;
-    background-position: center;
-    background-image: url('map-calabarzon.png');
-    border-radius: 0.5rem;
 }
