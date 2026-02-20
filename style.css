@@ -93,7 +93,7 @@
     color: #1a1a1a;
 }
 
-/* Typography for Rules */
+
 .rules-title {
     font-family: 'sans-serif';
     font-weight: 900;
@@ -103,7 +103,7 @@
     letter-spacing: -0.02em;
 }
 
-/* --- LANGUAGE SELECTOR & EXTRAS --- */
+
 .language-dropdown-content {
     display: none;
     opacity: 0;
