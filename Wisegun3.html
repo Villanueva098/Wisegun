@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wise Gun - About and Explore</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'dark-bg': '#262626',
+                        'darker-bg': '#1a1a1a',
+                        'accent-gold': '#c89f3e', 
+                        'light-text': '#e0e0e0',
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-darker-bg font-sans min-h-screen flex flex-col">
+
+    <header class="sticky top-0 z-20 bg-dark-bg text-light-text shadow-xl">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            
+            <a href="index.html" class="text-xl font-bold tracking-wider text-accent-gold">WISE GUN</a>
+
+            <div class="flex items-center space-x-4">
+                <nav class="hidden md:flex space-x-6 text-sm font-medium">
+                    <a href="index.html" class="text-light-text hover:text-accent-gold transition-colors">Home</a> 
+                    <a href="Wisegun2.html" class="text-accent-gold">About & Explore</a> 
+                    <a href="Wisegun3.html" class="text-light-text hover:text-accent-gold transition-colors">Rules</a> 
+                </nav>
+
+                <a href="#" class="py-2 px-4 bg-accent-gold text-darker-bg font-semibold rounded-lg shadow-md hover:bg-opacity-90 transition-colors text-sm">
+                    Log In / Sign Up
+                </a>
+
+                <div class="relative group">
+                    <button class="p-2 rounded-full hover:bg-darker-bg transition-colors">
+                        <i data-lucide="menu" class="w-6 h-6 text-accent-gold"></i>
+                    </button>
+                    <nav class="absolute right-0 top-full mt-2 w-48 rounded-lg bg-darker-bg border border-dark-bg shadow-xl opacity-0 transition-opacity duration-300 group-hover:opacity-100 focus-within:opacity-100 z-30">
+                        <ul class="text-light-text divide-y divide-dark-bg">
+                            <li><a href="index.html" class="block p-3 hover:bg-dark-bg transition-colors">Home</a></li>
+                            <li><a href="Wisegun2.html" class="block p-3 hover:bg-dark-bg transition-colors">About & Explore</a></li>
+                            <li><a href="Wisegun3.html" class="block p-3 hover:bg-dark-bg transition-colors">Rules</a></li>
+                            <li><a href="#" class="block p-3 hover:bg-dark-bg transition-colors">Registration</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow w-full">
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16">
+            <h2 class="text-3xl font-bold uppercase text-accent-gold mb-12 text-center border-y border-accent-gold py-4">
+                what is it all about
+            </h2>
+            
+            <div class="flex flex-col md:flex-row gap-8 items-start">
+                <div class="md:w-5/12 w-full"> 
+                    <p class="text-sm text-gray-400 leading-relaxed text-justify">
+                        What is this all about? This website guide's the new comers in the gun industry... take time to read the 3 main components of this website which is the registration steps local shops and policy's.
+                    </p>
+                </div>
+                
+                <div class="md:w-7/12 w-full flex flex-col md:flex-row gap-4">
+                    <div class="flex-1 min-h-[250px] bg-gray-700 rounded-lg bg-cover bg-center" style="background-image: url('https://bumpy-azure-vji5fa1aca-qlnf4yhl9u.edgeone.app/Store_Interior.jpg');"></div>
+                    <div class="flex-1 min-h-[250px] bg-gray-700 rounded-lg bg-cover bg-center" style="background-image: url('https://mute-lime-dglcpxiz3t.edgeone.app/images%20(24).jpeg');"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-16">
+            <h2 class="text-3xl font-bold uppercase text-accent-gold mb-12">What you can explore</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-accent-gold rounded-lg p-5 text-center">
+                    <h3 class="text-xl font-bold text-darker-bg mb-2">How to register</h3>
+                    <a href="#" class="inline-block py-2 px-6 bg-darker-bg text-accent-gold rounded-md text-sm">Learn more</a>
+                </div>
+
+                <div class="bg-accent-gold rounded-lg p-5 text-center">
+                    <h3 class="text-xl font-bold text-darker-bg mb-2">Verified Shops</h3>
+                    <a href="#" class="inline-block py-2 px-6 bg-darker-bg text-accent-gold rounded-md text-sm">Locate</a>
+                </div>
+
+                <div class="bg-accent-gold rounded-lg p-5 text-center">
+                    <h3 class="text-xl font-bold text-darker-bg mb-2">Safety Rules</h3>
+                    <p class="text-xs text-darker-bg mb-4">Read the essential rules before handling firearms.</p>
+                    <a href="Wisegun3.html" class="inline-block py-2 px-6 bg-darker-bg text-accent-gold rounded-md text-sm font-bold">Go to Rules</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-dark-bg py-8 text-center text-gray-400 border-t border-gray-800">
+        <p class="text-sm">&copy; WISE GUN 2025</p>
+    </footer>
+
+    <script>lucide.createIcons();</script>
+</body>
+  </html>
