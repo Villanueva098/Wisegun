@@ -22,8 +22,6 @@
             }
         }
     </script>
-
-    <!-- External CSS – contains all styles including the new map ones -->
     <link rel="stylesheet" href="style.css"> 
 </head>
 
@@ -126,59 +124,34 @@
 
         </div>
 
-        <!-- New Pure CSS + SVG Map Section -->
+        <!-- Google My Maps Embed – Interactive & Clear View -->
         <section class="mb-20">
             <h3 class="text-2xl font-bold text-accent-gold mb-6 uppercase tracking-wide text-center">
                 Gun Shops & Registration Areas in Calabarzon
             </h3>
-            <p class="text-light-text text-center mb-8 text-sm max-w-3xl mx-auto">
-                Simple overview map highlighting Calabarzon (Region IV-A) within the Philippines.<br>
-                <strong>Gold area</strong> = Calabarzon region • 
-                <strong>Red dots</strong> ≈ example gun shops/dealers • 
-                <strong>Blue dots</strong> ≈ example registration spots<br>
+            <p class="text-light-text text-center mb-6 text-sm max-w-3xl mx-auto">
+                Interactive Google Map with marked gun shops/dealers and example PNP FEO/registration spots in Calabarzon (Region IV-A).<br>
                 <span class="text-xs opacity-80">
-                    Educational illustration only — not geographically precise. 
-                    Always verify current authorized dealers and registration info at 
+                    <strong>Zoom, drag, and click pins</strong> for details. 
+                    For reference only — always verify current licenses and locations directly with official PNP FEO: 
                     <a href="https://feo.csg.pnp.gov.ph/" target="_blank" class="underline hover:text-accent-gold">feo.csg.pnp.gov.ph</a>.
                 </span>
             </p>
 
-            <div class="map-wrapper">
-                <svg viewBox="0 0 400 600" class="w-full h-auto" preserveAspectRatio="xMidYMid meet">
-                    <!-- Philippines outline (simplified) -->
-                    <g fill="none" stroke="#555" stroke-width="2">
-                        <path d="M180 80 Q 140 120, 160 200 Q 180 280, 220 320 Q 260 340, 300 300 Q 340 260, 360 200 Q 380 140, 340 100 Q 300 60, 240 70 Q 200 60, 180 80 Z" fill="#2a2a2a"/>
-                        <ellipse cx="220" cy="420" rx="80" ry="50" fill="#2a2a2a"/>
-                        <ellipse cx="300" cy="520" rx="100" ry="60" fill="#2a2a2a"/>
-                    </g>
-
-                    <!-- Calabarzon highlighted -->
-                    <g class="calabarzon">
-                        <path d="M200 220 Q 220 280, 260 300 Q 300 320, 320 280 Q 340 240, 320 200 Q 280 180, 240 200 Q 220 210, 200 220 Z" 
-                              fill="rgba(200, 159, 62, 0.35)" stroke="var(--accent-gold)" stroke-width="3" stroke-dasharray="4 2"/>
-                        <text x="260" y="260" fill="var(--accent-gold)" font-size="18" font-weight="bold" text-anchor="middle" opacity="0.9">
-                            CALABARZON
-                        </text>
-                    </g>
-
-                    <!-- Example pins -->
-                    <g class="pin red-pin" style="transform: translate(180px, 240px);">
-                        <circle cx="0" cy="0" r="10" fill="#c0392b" stroke="#fff" stroke-width="2"/>
-                        <text x="0" y="-15" fill="#fff" font-size="12" text-anchor="middle" font-weight="bold">Shop</text>
-                    </g>
-                    <g class="pin red-pin" style="transform: translate(240px, 280px);">
-                        <circle cx="0" cy="0" r="10" fill="#c0392b" stroke="#fff" stroke-width="2"/>
-                        <text x="0" y="-15" fill="#fff" font-size="12" text-anchor="middle" font-weight="bold">Dealer</text>
-                    </g>
-                    <g class="pin blue-pin" style="transform: translate(300px, 260px);">
-                        <circle cx="0" cy="0" r="10" fill="#2980b9" stroke="#fff" stroke-width="2"/>
-                        <text x="0" y="-15" fill="#fff" font-size="12" text-anchor="middle" font-weight="bold">Reg</text>
-                    </g>
-                </svg>
+            <div class="rounded-xl overflow-hidden shadow-2xl border border-accent-gold/30 mx-auto max-w-5xl">
+                <iframe 
+                    src="https://www.google.com/maps/d/embed?mid=1BpgtTpX8uCzgm6ix4BklXCCen5_HERM"
+                    width="100%" 
+                    height="500" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
             </div>
 
-            <p class="text-xs text-center mt-6 opacity-70">
-                Simplified educational illustration • Not to scale • For reference only
+            <p class="text-xs text-center mt-4 opacity-70">
+                Map created with Google My Maps • Mobile-friendly • Click pins for shop/registration info
             </p>
         </section>
 
@@ -246,4 +219,4 @@
     </script>
 
 </body>
-    </html>
+</html>
