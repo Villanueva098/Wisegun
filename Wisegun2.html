@@ -7,7 +7,6 @@
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
-    <link rel="stylesheet" href="style.css">
 
     <script>
         tailwind.config = {
@@ -23,24 +22,28 @@
             }
         }
     </script>
+    
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 
 <body class="bg-darker-bg font-sans min-h-screen flex flex-col">
 
-    <header class="sticky top-0 z-20 bg-dark-bg text-light-text shadow-xl">
+    <header class="sticky top-0 z-50 bg-dark-bg text-light-text shadow-xl">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
             <a href="index.html" class="text-xl font-bold tracking-wider text-accent-gold">WISE GUN</a>
 
             <div class="flex items-center space-x-4">
                 <nav class="hidden md:flex space-x-6 text-sm font-medium">
                     <a href="index.html" class="hover:text-accent-gold transition-colors">Home</a> 
-                    <a href="Wisegun2.html" class="text-accent-gold">About & Explore</a> 
-                    <a href="Wisegun3.html" class="hover:text-accent-gold transition-colors">Rules</a> 
+                    <a href="Wisegun2.html" class="text-accent-gold">About</a> 
+                    <a href="Wisegun3.html" class="hover:text-accent-gold transition-colors">Safety</a> 
+                    <a href="Wisegun4.html" class="hover:text-accent-gold transition-colors">Registration</a>
                 </nav>
 
-                <a href="#" class="py-2 px-4 bg-accent-gold text-darker-bg font-semibold rounded-lg text-sm btn-animate">
-                    Log In / Sign Up
-                </a>
+                <button onclick="handleRegistration()" class="py-2 px-4 bg-accent-gold text-darker-bg font-semibold rounded-lg text-sm btn-animate">
+                    Get Started
+                </button>
 
                 <div class="relative group">
                     <button class="p-2 rounded-full hover:bg-darker-bg transition-colors">
@@ -51,6 +54,7 @@
                             <li><a href="index.html" class="block p-3 hover:bg-dark-bg transition-colors">Home</a></li>
                             <li><a href="Wisegun2.html" class="block p-3 hover:bg-dark-bg transition-colors">About</a></li>
                             <li><a href="Wisegun3.html" class="block p-3 hover:bg-dark-bg transition-colors">Safety</a></li>
+                            <li><a href="Wisegun4.html" class="block p-3 hover:bg-dark-bg transition-colors">Registration</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -92,9 +96,9 @@
                     <div class="p-5 text-center flex-grow flex flex-col justify-between">
                         <div>
                             <h3 class="text-xl font-semibold text-darker-bg mb-2">Gun Registration</h3>
-                            <p class="text-xs text-darker-bg mb-4">Official steps to register your firearm via PNP FEO portal.</p>
+                            <p class="text-xs text-darker-bg mb-4">View the registration guide and official PNP portal details.</p>
                         </div>
-                        <a href="https://www.feo.pnp.gov.ph/" target="_blank" rel="noopener" class="py-2 px-6 bg-darker-bg text-accent-gold font-medium rounded-md text-sm btn-animate">Learn more</a>
+                        <a href="Wisegun4.html" class="py-2 px-6 bg-darker-bg text-accent-gold font-medium rounded-md text-sm btn-animate">Learn more</a>
                     </div>
                 </div>
 
@@ -103,9 +107,9 @@
                     <div class="p-5 text-center flex-grow flex flex-col justify-between">
                         <div>
                             <h3 class="text-xl font-semibold text-darker-bg mb-2">Verified Shops</h3>
-                            <p class="text-xs text-darker-bg mb-4">Locate government-authorized firearm dealers nationwide.</p>
+                            <p class="text-xs text-darker-bg mb-4">Explore our Calabarzon locator for authorized firearm dealers.</p>
                         </div>
-                        <a href="https://pnp.gov.ph/" target="_blank" rel="noopener" class="py-2 px-6 bg-darker-bg text-accent-gold font-medium rounded-md text-sm btn-animate">Learn more</a>
+                        <a href="Wisegun4.html" class="py-2 px-6 bg-darker-bg text-accent-gold font-medium rounded-md text-sm btn-animate">Learn more</a>
                     </div>
                 </div>
 
@@ -135,11 +139,11 @@
                 <nav class="flex flex-wrap justify-center text-sm font-medium">
                     <a href="index.html" class="footer-link">Home</a>
                     <span class="footer-divider">|</span>
-                    <a href="Wisegun2.html" class="text-accent-gold">About & Explore</a>
+                    <a href="Wisegun2.html" class="text-accent-gold">About</a>
                     <span class="footer-divider">|</span>
-                    <a href="Wisegun3.html" class="footer-link">Safety Rules</a>
+                    <a href="Wisegun3.html" class="footer-link">Safety</a>
                     <span class="footer-divider">|</span>
-                    <a href="#" class="footer-link">Registration</a>
+                    <a href="Wisegun4.html" class="footer-link">Registration</a>
                 </nav>
 
                 <div class="flex flex-col items-center space-y-3 text-center">
@@ -156,14 +160,8 @@
                         &copy; 2026 WISE GUN. Promoting Safe and Legal Firearm Ownership.
                     </p>
                 </div>
-
             </div>
         </div>
     </footer>
-
-    <script>
-
-        lucide.createIcons();
-    </script>
 </body>
-</html>
+                    </html>
