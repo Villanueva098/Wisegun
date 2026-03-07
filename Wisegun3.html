@@ -8,12 +8,6 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
 
-    
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" 
-          integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5n/N0RDwH4=" crossorigin=""/>
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" 
-            integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-
     <script>
         tailwind.config = {
             theme: {
@@ -28,6 +22,8 @@
             }
         }
     </script>
+
+    <!-- External CSS – contains all styles including the new map ones -->
     <link rel="stylesheet" href="style.css"> 
 </head>
 
@@ -130,18 +126,60 @@
 
         </div>
 
-        <!-- New Interactive Map Section -->
+        <!-- New Pure CSS + SVG Map Section -->
         <section class="mb-20">
             <h3 class="text-2xl font-bold text-accent-gold mb-6 uppercase tracking-wide text-center">
                 Gun Shops & Registration Areas in Calabarzon
             </h3>
-            <p class="text-light-text text-center mb-6 text-sm max-w-3xl mx-auto">
-                Interactive map showing approximate locations of some licensed gun shops/dealers and PNP FEO-related spots in Calabarzon (Region IV-A). 
-                <strong>Red pins</strong> = Gun shops/dealers • <strong>Blue pins</strong> = Registration/caravan example areas.<br>
-                <span class="text-xs opacity-80">This is for reference only. Always verify current authorization via official PNP FEO: <a href="https://feo.csg.pnp.gov.ph/" target="_blank" class="underline hover:text-accent-gold">feo.csg.pnp.gov.ph</a>. Locations approximate from public sources.</span>
+            <p class="text-light-text text-center mb-8 text-sm max-w-3xl mx-auto">
+                Simple overview map highlighting Calabarzon (Region IV-A) within the Philippines.<br>
+                <strong>Gold area</strong> = Calabarzon region • 
+                <strong>Red dots</strong> ≈ example gun shops/dealers • 
+                <strong>Blue dots</strong> ≈ example registration spots<br>
+                <span class="text-xs opacity-80">
+                    Educational illustration only — not geographically precise. 
+                    Always verify current authorized dealers and registration info at 
+                    <a href="https://feo.csg.pnp.gov.ph/" target="_blank" class="underline hover:text-accent-gold">feo.csg.pnp.gov.ph</a>.
+                </span>
             </p>
 
-            <div id="map" class="h-96 rounded-lg shadow-2xl border border-accent-gold/30"></div>
+            <div class="map-wrapper">
+                <svg viewBox="0 0 400 600" class="w-full h-auto" preserveAspectRatio="xMidYMid meet">
+                    <!-- Philippines outline (simplified) -->
+                    <g fill="none" stroke="#555" stroke-width="2">
+                        <path d="M180 80 Q 140 120, 160 200 Q 180 280, 220 320 Q 260 340, 300 300 Q 340 260, 360 200 Q 380 140, 340 100 Q 300 60, 240 70 Q 200 60, 180 80 Z" fill="#2a2a2a"/>
+                        <ellipse cx="220" cy="420" rx="80" ry="50" fill="#2a2a2a"/>
+                        <ellipse cx="300" cy="520" rx="100" ry="60" fill="#2a2a2a"/>
+                    </g>
+
+                    <!-- Calabarzon highlighted -->
+                    <g class="calabarzon">
+                        <path d="M200 220 Q 220 280, 260 300 Q 300 320, 320 280 Q 340 240, 320 200 Q 280 180, 240 200 Q 220 210, 200 220 Z" 
+                              fill="rgba(200, 159, 62, 0.35)" stroke="var(--accent-gold)" stroke-width="3" stroke-dasharray="4 2"/>
+                        <text x="260" y="260" fill="var(--accent-gold)" font-size="18" font-weight="bold" text-anchor="middle" opacity="0.9">
+                            CALABARZON
+                        </text>
+                    </g>
+
+                    <!-- Example pins -->
+                    <g class="pin red-pin" style="transform: translate(180px, 240px);">
+                        <circle cx="0" cy="0" r="10" fill="#c0392b" stroke="#fff" stroke-width="2"/>
+                        <text x="0" y="-15" fill="#fff" font-size="12" text-anchor="middle" font-weight="bold">Shop</text>
+                    </g>
+                    <g class="pin red-pin" style="transform: translate(240px, 280px);">
+                        <circle cx="0" cy="0" r="10" fill="#c0392b" stroke="#fff" stroke-width="2"/>
+                        <text x="0" y="-15" fill="#fff" font-size="12" text-anchor="middle" font-weight="bold">Dealer</text>
+                    </g>
+                    <g class="pin blue-pin" style="transform: translate(300px, 260px);">
+                        <circle cx="0" cy="0" r="10" fill="#2980b9" stroke="#fff" stroke-width="2"/>
+                        <text x="0" y="-15" fill="#fff" font-size="12" text-anchor="middle" font-weight="bold">Reg</text>
+                    </g>
+                </svg>
+            </div>
+
+            <p class="text-xs text-center mt-6 opacity-70">
+                Simplified educational illustration • Not to scale • For reference only
+            </p>
         </section>
 
     </main>
@@ -205,71 +243,7 @@
 
     <script>
         lucide.createIcons();
-
-       
-        document.addEventListener('DOMContentLoaded', function () {
-            
-            var map = L.map('map').setView([14.20, 121.15], 9); 
-
-            
-            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-                maxZoom: 18,
-            }).addTo(map);
-
-            
-            const gunShops = [
-                { lat: 14.211, lng: 121.165, name: "Top Gun Sporting Goods", popup: "Calamba, Laguna - Dealer" },
-                { lat: 14.429, lng: 120.936, name: "Bullet Weight Guns", popup: "Kawit/Imus area, Cavite" },
-                { lat: 14.35, lng: 120.94, name: "Southways Guns & Ammo", popup: "Imus, Cavite" },
-                { lat: 14.30, lng: 121.00, name: "Gunnery Ph / Calamba Branch", popup: "Calamba, Laguna" },
-                { lat: 14.45, lng: 120.98, name: "Armament FA & Indoor Range", popup: "Imus/Daang Hari, Cavite" },
-            ];
-
-            
-            const registrationSpots = [
-                { lat: 14.211, lng: 121.165, name: "PNP FEO Caravan Example", popup: "Calamba City, Laguna - LTOPF/Registration" },
-                { lat: 14.55, lng: 121.05, name: "Quezon City (nearby reference)", popup: "PNP Camp Crame area - FEO HQ reference" },
-            ];
-
-            
-            gunShops.forEach(shop => {
-                L.marker([shop.lat, shop.lng], {
-                    icon: L.divIcon({
-                        className: 'custom-marker-red',
-                        html: '<div style="background:red;color:white;width:24px;height:24px;border-radius:50%;text-align:center;line-height:24px;">📍</div>',
-                        iconSize: [24, 24],
-                        iconAnchor: [12, 24]
-                    })
-                })
-                .addTo(map)
-                .bindPopup(`<b>\( {shop.name}</b><br> \){shop.popup}<br><small>Verify with PNP FEO</small>`);
-            });
-
-            
-            registrationSpots.forEach(spot => {
-                L.marker([spot.lat, spot.lng], {
-                    icon: L.divIcon({
-                        className: 'custom-marker-blue',
-                        html: '<div style="background:blue;color:white;width:24px;height:24px;border-radius:50%;text-align:center;line-height:24px;">📍</div>',
-                        iconSize: [24, 24],
-                        iconAnchor: [12, 24]
-                    })
-                })
-                .addTo(map)
-                .bindPopup(`<b>\( {spot.name}</b><br> \){spot.popup}<br><small>Check official schedules</small>`);
-            });
-
-            
-            setTimeout(() => {
-                map.invalidateSize(); 
-            }, 300);
-        });
     </script>
 
-
-        .custom-marker-red, .custom-marker-blue { background: transparent !important; border: none !important; }
-    </style>
-
 </body>
-</html>
+    </html>
