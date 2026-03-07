@@ -8,6 +8,12 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
 
+    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" 
+          integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5n/N0RDwH4=" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" 
+            integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
     <script>
         tailwind.config = {
             theme: {
@@ -123,14 +129,27 @@
             </div>
 
         </div>
-    </main>
 
+        <!-- New Interactive Map Section -->
+        <section class="mb-20">
+            <h3 class="text-2xl font-bold text-accent-gold mb-6 uppercase tracking-wide text-center">
+                Gun Shops & Registration Areas in Calabarzon
+            </h3>
+            <p class="text-light-text text-center mb-6 text-sm max-w-3xl mx-auto">
+                Interactive map showing approximate locations of some licensed gun shops/dealers and PNP FEO-related spots in Calabarzon (Region IV-A). 
+                <strong>Red pins</strong> = Gun shops/dealers • <strong>Blue pins</strong> = Registration/caravan example areas.<br>
+                <span class="text-xs opacity-80">This is for reference only. Always verify current authorization via official PNP FEO: <a href="https://feo.csg.pnp.gov.ph/" target="_blank" class="underline hover:text-accent-gold">feo.csg.pnp.gov.ph</a>. Locations approximate from public sources.</span>
+            </p>
+
+            <div id="map" class="h-96 rounded-lg shadow-2xl border border-accent-gold/30"></div>
+        </section>
+
+    </main>
 
     <footer class="bg-dark-bg text-light-text py-10 border-t border-accent-gold/20 mt-auto">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
 
-                
                 <div>
                     <a href="index.html" class="text-2xl font-bold tracking-wider text-accent-gold uppercase block mb-4">WISE GUN</a>
                     <p class="text-sm leading-relaxed opacity-80">
@@ -148,7 +167,6 @@
                     </ul>
                 </div>
 
-                
                 <div>
                     <h4 class="text-accent-gold font-semibold mb-4 uppercase tracking-wide text-sm">Contact</h4>
                     <ul class="space-y-2 text-sm">
@@ -163,7 +181,6 @@
                     </ul>
                 </div>
 
-                
                 <div class="md:text-right">
                     <div class="flex md:justify-end space-x-4 mb-6">
                         <a href="#" class="hover:text-accent-gold transition-colors">
@@ -177,7 +194,7 @@
                         </a>
                     </div>
                     <p class="text-xs opacity-70">
-                        &copy; 2026 Wise Gun. All rights reserved.<br>
+                        © 2026 Wise Gun. All rights reserved.<br>
                         Committed to firearm safety and Philippine law compliance.
                     </p>
                 </div>
@@ -188,6 +205,71 @@
 
     <script>
         lucide.createIcons();
+
+       
+        document.addEventListener('DOMContentLoaded', function () {
+            
+            var map = L.map('map').setView([14.20, 121.15], 9); 
+
+            
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+                maxZoom: 18,
+            }).addTo(map);
+
+            
+            const gunShops = [
+                { lat: 14.211, lng: 121.165, name: "Top Gun Sporting Goods", popup: "Calamba, Laguna - Dealer" },
+                { lat: 14.429, lng: 120.936, name: "Bullet Weight Guns", popup: "Kawit/Imus area, Cavite" },
+                { lat: 14.35, lng: 120.94, name: "Southways Guns & Ammo", popup: "Imus, Cavite" },
+                { lat: 14.30, lng: 121.00, name: "Gunnery Ph / Calamba Branch", popup: "Calamba, Laguna" },
+                { lat: 14.45, lng: 120.98, name: "Armament FA & Indoor Range", popup: "Imus/Daang Hari, Cavite" },
+            ];
+
+            
+            const registrationSpots = [
+                { lat: 14.211, lng: 121.165, name: "PNP FEO Caravan Example", popup: "Calamba City, Laguna - LTOPF/Registration" },
+                { lat: 14.55, lng: 121.05, name: "Quezon City (nearby reference)", popup: "PNP Camp Crame area - FEO HQ reference" },
+            ];
+
+            
+            gunShops.forEach(shop => {
+                L.marker([shop.lat, shop.lng], {
+                    icon: L.divIcon({
+                        className: 'custom-marker-red',
+                        html: '<div style="background:red;color:white;width:24px;height:24px;border-radius:50%;text-align:center;line-height:24px;">📍</div>',
+                        iconSize: [24, 24],
+                        iconAnchor: [12, 24]
+                    })
+                })
+                .addTo(map)
+                .bindPopup(`<b>\( {shop.name}</b><br> \){shop.popup}<br><small>Verify with PNP FEO</small>`);
+            });
+
+            
+            registrationSpots.forEach(spot => {
+                L.marker([spot.lat, spot.lng], {
+                    icon: L.divIcon({
+                        className: 'custom-marker-blue',
+                        html: '<div style="background:blue;color:white;width:24px;height:24px;border-radius:50%;text-align:center;line-height:24px;">📍</div>',
+                        iconSize: [24, 24],
+                        iconAnchor: [12, 24]
+                    })
+                })
+                .addTo(map)
+                .bindPopup(`<b>\( {spot.name}</b><br> \){spot.popup}<br><small>Check official schedules</small>`);
+            });
+
+            
+            setTimeout(() => {
+                map.invalidateSize(); 
+            }, 300);
+        });
     </script>
+
+
+        .custom-marker-red, .custom-marker-blue { background: transparent !important; border: none !important; }
+    </style>
+
 </body>
-    </html>
+</html>
