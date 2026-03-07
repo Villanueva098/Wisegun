@@ -5,6 +5,7 @@
     --accent-gold: #c89f3e;
     --light-text: #e0e0e0;
     --muted-text: #9ca3af;
+    --note-yellow: #f3cc7a; 
 }
 
 
@@ -78,9 +79,8 @@
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
 }
 
-
 .tilted-icon-box {
-    background-color: #f3cc7a;
+    background-color: var(--note-yellow);
     padding: 10px;
     transform: rotate(45deg);
     margin-bottom: 12px;
@@ -88,9 +88,8 @@
 
 .tilted-icon-box i {
     transform: rotate(-45deg);
-    color: #1a1a1a;
+    color: var(--darker-bg);
 }
-
 
 .btn-animate {
     transition: all 0.2s ease;
@@ -99,6 +98,45 @@
 .btn-animate:active {
     transform: scale(0.95);
     filter: brightness(0.9);
+}
+
+
+#map {
+    z-index: 1; 
+    background-color: #111;
+}
+
+.registration-card-container {
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@media (min-width: 1024px) {
+    .registration-card-container { flex-direction: row; }
+}
+
+
+.note-box {
+    background-color: var(--note-yellow);
+    padding: 2.5rem;
+    color: var(--darker-bg);
+}
+
+.note-box p {
+    font-style: italic;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+
+.custom-pin {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 
@@ -111,19 +149,14 @@
 
 .footer-link {
     color: var(--muted-text);
-    transition: color 0.3s ease, transform 0.2s ease;
-    display: inline-block;
+    transition: color 0.3s ease;
+    text-decoration: none;
+    font-size: 0.875rem;
 }
 
 .footer-link:hover {
     color: var(--accent-gold);
 }
-
-.footer-divider {
-    color: #404040;
-    margin: 0 0.75rem;
-}
-
 
 .language-selector .language-dropdown-content {
     display: none;
@@ -135,7 +168,6 @@
     display: block;
     opacity: 1;
 }
-
 
 .about-img {
     background-size: cover;
