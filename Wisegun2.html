@@ -29,18 +29,31 @@
 
     <header class="sticky top-0 z-20 bg-dark-bg text-light-text shadow-xl">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-            <a href="index.html" class="text-xl font-bold tracking-wider text-accent-gold">WISE GUN</a>
+            <a href="index.html" class="text-xl font-bold tracking-wider text-accent-gold uppercase">WISE GUN</a>
 
             <div class="flex items-center space-x-4">
                 <nav class="hidden md:flex space-x-6 text-sm font-medium">
-                    <a href="index.html" class="hover:text-accent-gold transition-colors">Home</a> 
+                    <a href="index.html" class="text-light-text hover:text-accent-gold transition-colors">Home</a> 
                     <a href="Wisegun2.html" class="text-accent-gold">About & Explore</a> 
-                    <a href="Wisegun3.html" class="hover:text-accent-gold transition-colors">Rules</a> 
+                    <a href="Wisegun3.html" class="text-light-text hover:text-accent-gold transition-colors">Rules</a> 
                 </nav>
 
-                <a href="#" class="py-2 px-4 bg-accent-gold text-darker-bg font-semibold rounded-lg text-sm btn-animate">
+                <div class="relative group hidden sm:block">
+                    <button class="flex items-center space-x-1 p-2 rounded-lg hover:bg-darker-bg transition-colors text-light-text text-sm">
+                        <i data-lucide="globe" class="w-4 h-4 text-accent-gold"></i>
+                        <span>EN</span>
+                    </button>
+                </div>
+
+                <a href="#" class="py-2 px-4 bg-accent-gold text-darker-bg font-semibold rounded-lg shadow-md hover:bg-opacity-90 transition-colors text-sm">
                     Log In / Sign Up
                 </a>
+
+                <div class="relative group">
+                    <button class="p-2 rounded-full hover:bg-darker-bg transition-colors">
+                        <i data-lucide="search" class="w-6 h-6 text-accent-gold"></i>
+                    </button>
+                </div>
 
                 <div class="relative group">
                     <button class="p-2 rounded-full hover:bg-darker-bg transition-colors">
@@ -48,9 +61,10 @@
                     </button>
                     <nav class="absolute right-0 top-full mt-2 w-48 rounded-lg bg-darker-bg border border-dark-bg shadow-xl opacity-0 transition-opacity duration-300 group-hover:opacity-100 z-30">
                         <ul class="text-light-text divide-y divide-dark-bg">
-                            <li><a href="index.html" class="block p-3 hover:bg-dark-bg transition-colors">Home</a></li>
-                            <li><a href="Wisegun2.html" class="block p-3 hover:bg-dark-bg transition-colors">About</a></li>
-                            <li><a href="Wisegun3.html" class="block p-3 hover:bg-dark-bg transition-colors">Safety</a></li>
+                            <li><a href="index.html" class="block p-3 hover:bg-dark-bg">Home</a></li>
+                            <li><a href="Wisegun2.html" class="block p-3 hover:bg-dark-bg text-accent-gold">About & Explore</a></li>
+                            <li><a href="Wisegun3.html" class="block p-3 hover:bg-dark-bg">Rules</a></li>
+                            <li><a href="#" class="block p-3 hover:bg-dark-bg">Registration</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -58,111 +72,128 @@
         </div>
     </header>
 
-    <main class="flex-grow w-full">
+    <main class="flex-grow w-full max-w-7xl mx-auto px-4 pt-16">
         
-        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16">
-            <h2 class="text-3xl font-bold uppercase text-accent-gold mb-12 text-center border-y border-accent-gold py-4">
-                what is it all about
+        <section class="pt-8 pb-16">
+            <h2 class="text-3xl md:text-4xl font-bold uppercase text-accent-gold mb-12 text-center border-y border-accent-gold/30 py-6">
+                What is it all about
             </h2>
             
-            <div class="flex flex-col md:flex-row gap-8 items-start">
+            <div class="flex flex-col md:flex-row gap-10 items-start">
                 <div class="md:w-5/12 w-full"> 
-                    <p class="text-sm text-gray-400 leading-relaxed text-justify">
+                    <p class="text-light-text leading-relaxed text-justify">
                         This website guides newcomers in the gun industry. Here, you can learn the basic procedures for handling a firearm, including the registration process and finding verified shops in the Philippines. Take time to explore our main resources: registration steps, local shop locators, and safety policies.
                     </p>
                 </div>
                 
-                <div class="md:w-7/12 w-full flex flex-col md:flex-row gap-4">
-                    <div class="about-img flex-1 min-h-[250px] bg-gray-700" 
+                <div class="md:w-7/12 w-full flex flex-col md:flex-row gap-6">
+                    <div class="about-img flex-1 min-h-[280px] bg-gray-800 rounded-lg overflow-hidden bg-cover bg-center shadow-xl" 
                          style="background-image: url('https://bumpy-azure-vji5fa1aca-qlnf4yhl9u.edgeone.app/Store_Interior.jpg');">
                     </div>
-                    <div class="about-img flex-1 min-h-[250px] bg-gray-700" 
+                    <div class="about-img flex-1 min-h-[280px] bg-gray-800 rounded-lg overflow-hidden bg-cover bg-center shadow-xl" 
                          style="background-image: url('https://mute-lime-dglcpxiz3t.edgeone.app/images%20(24).jpeg');">
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-16">
-            <h2 class="text-3xl font-bold uppercase text-accent-gold mb-12">What you can explore</h2>
+        <section class="pb-20">
+            <h2 class="text-3xl md:text-4xl font-bold uppercase text-accent-gold mb-12 text-center">What you can explore</h2>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="explore-card bg-accent-gold rounded-lg overflow-hidden flex flex-col">
-                    <div class="h-36 bg-cover bg-center" style="background-image: url('https://sudden-crimson-ggycwloknt-aliepc72nv.edgeone.app/images%20(22).jpeg');"></div>
-                    <div class="p-5 text-center flex-grow flex flex-col justify-between">
+                <div class="explore-card bg-accent-gold rounded-lg overflow-hidden flex flex-col shadow-2xl">
+                    <div class="h-48 bg-cover bg-center" style="background-image: url('https://sudden-crimson-ggycwloknt-aliepc72nv.edgeone.app/images%20(22).jpeg');"></div>
+                    <div class="p-6 text-center flex-grow flex flex-col justify-between">
                         <div>
-                            <h3 class="text-xl font-semibold text-darker-bg mb-2">Gun Registration</h3>
-                            <p class="text-xs text-darker-bg mb-4">Official steps to register your firearm via PNP FEO portal.</p>
+                            <h3 class="text-xl font-bold text-darker-bg mb-3">Gun Registration</h3>
+                            <p class="text-darker-bg text-sm mb-6">Official steps to register your firearm via PNP FEO portal.</p>
                         </div>
-                        <a href="https://www.feo.pnp.gov.ph/" target="_blank" rel="noopener" class="py-2 px-6 bg-darker-bg text-accent-gold font-medium rounded-md text-sm btn-animate">Learn more</a>
+                        <a href="https://feo.pnp-csg.org/" target="_blank" rel="noopener" class="py-3 px-8 bg-darker-bg text-accent-gold font-semibold rounded-md hover:bg-opacity-90 transition-colors">Learn more</a>
                     </div>
                 </div>
 
-                <div class="explore-card bg-accent-gold rounded-lg overflow-hidden flex flex-col">
-                    <div class="h-36 bg-cover bg-center" style="background-image: url('https://front-ivory-qp3m06xdp3.edgeone.app/IMG-6176.jpg');"></div>
-                    <div class="p-5 text-center flex-grow flex flex-col justify-between">
+                <div class="explore-card bg-accent-gold rounded-lg overflow-hidden flex flex-col shadow-2xl">
+                    <div class="h-48 bg-cover bg-center" style="background-image: url('https://front-ivory-qp3m06xdp3.edgeone.app/IMG-6176.jpg');"></div>
+                    <div class="p-6 text-center flex-grow flex flex-col justify-between">
                         <div>
-                            <h3 class="text-xl font-semibold text-darker-bg mb-2">Verified Shops</h3>
-                            <p class="text-xs text-darker-bg mb-4">Locate government-authorized firearm dealers nationwide.</p>
+                            <h3 class="text-xl font-bold text-darker-bg mb-3">Verified Shops</h3>
+                            <p class="text-darker-bg text-sm mb-6">Locate government-authorized firearm dealers nationwide.</p>
                         </div>
-                        <a href="https://pnp.gov.ph/" target="_blank" rel="noopener" class="py-2 px-6 bg-darker-bg text-accent-gold font-medium rounded-md text-sm btn-animate">Learn more</a>
+                        <a href="https://feo.pnp-csg.org/" target="_blank" rel="noopener" class="py-3 px-8 bg-darker-bg text-accent-gold font-semibold rounded-md hover:bg-opacity-90 transition-colors">Learn more</a>
                     </div>
                 </div>
 
-                <div class="explore-card bg-accent-gold rounded-lg overflow-hidden flex flex-col">
-                    <div class="h-36 bg-cover bg-center" style="background-image: url('https://proposed-crimson-x7gltb17jw.edgeone.app/images%20-%202026-02-20T235717.228.jpeg');"></div>
-                    <div class="p-5 text-center flex-grow flex flex-col justify-between">
+                <div class="explore-card bg-accent-gold rounded-lg overflow-hidden flex flex-col shadow-2xl">
+                    <div class="h-48 bg-cover bg-center" style="background-image: url('https://proposed-crimson-x7gltb17jw.edgeone.app/images%20-%202026-02-20T235717.228.jpeg');"></div>
+                    <div class="p-6 text-center flex-grow flex flex-col justify-between">
                         <div>
-                            <h3 class="text-xl font-semibold text-darker-bg mb-2">Safety & Policy</h3>
-                            <p class="text-xs text-darker-bg mb-4">Essential safety rules and policies for responsible ownership.</p>
+                            <h3 class="text-xl font-bold text-darker-bg mb-3">Safety & Policy</h3>
+                            <p class="text-darker-bg text-sm mb-6">Essential safety rules and policies for responsible ownership.</p>
                         </div>
-                        <a href="Wisegun3.html" class="py-2 px-6 bg-darker-bg text-accent-gold font-medium rounded-md text-sm btn-animate">Learn more</a>
+                        <a href="Wisegun3.html" class="py-3 px-8 bg-darker-bg text-accent-gold font-semibold rounded-md hover:bg-opacity-90 transition-colors">Learn more</a>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer class="site-footer">
+    
+    <footer class="bg-dark-bg text-light-text py-12 mt-auto">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col items-center justify-center space-y-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 
-                <div class="text-center">
-                    <h2 class="text-2xl font-bold tracking-tighter text-accent-gold">WISE GUN</h2>
-                    <p class="text-[10px] text-gray-500 mt-1 uppercase tracking-[0.2em]">Philippines</p>
+                
+                <div>
+                    <h3 class="text-accent-gold font-bold text-lg mb-4 uppercase tracking-wider">Wise Gun</h3>
+                    <p class="text-sm">Promoting safe, responsible, and legal firearm ownership in the Philippines.</p>
                 </div>
 
-                <nav class="flex flex-wrap justify-center text-sm font-medium">
-                    <a href="index.html" class="footer-link">Home</a>
-                    <span class="footer-divider">|</span>
-                    <a href="Wisegun2.html" class="text-accent-gold">About & Explore</a>
-                    <span class="footer-divider">|</span>
-                    <a href="Wisegun3.html" class="footer-link">Safety Rules</a>
-                    <span class="footer-divider">|</span>
-                    <a href="#" class="footer-link">Registration</a>
-                </nav>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="index.html" class="hover:text-accent-gold transition-colors">Home</a></li>
+                        <li><a href="Wisegun2.html" class="hover:text-accent-gold transition-colors">About & Explore</a></li>
+                        <li><a href="Wisegun3.html" class="hover:text-accent-gold transition-colors">Rules</a></li>
+                        <li><a href="#" class="hover:text-accent-gold transition-colors">Contact</a></li>
+                    </ul>
+                </div>
 
-                <div class="flex flex-col items-center space-y-3 text-center">
-                    <div class="flex space-x-6">
-                        <a href="#" class="footer-link hover:scale-110 transition-transform"><i data-lucide="facebook" class="w-5 h-5"></i></a>
-                        <a href="mailto:wise.gun.info@gmail.com" class="footer-link hover:scale-110 transition-transform"><i data-lucide="mail" class="w-5 h-5"></i></a>
-                        <a href="#" class="footer-link hover:scale-110 transition-transform"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Resources</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="https://feo.pnp-csg.org/" target="_blank" class="hover:text-accent-gold transition-colors">Gun Registration (PNP FEO)</a></li>
+                        <li><a href="https://feo.pnp-csg.org/" target="_blank" class="hover:text-accent-gold transition-colors">Authorized Dealers</a></li>
+                        <li><a href="Wisegun3.html" class="hover:text-accent-gold transition-colors">Safety & Policies</a></li>
+                    </ul>
+                </div>
+
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Connect</h4>
+                    <div class="flex space-x-6 mb-6">
+                        <a href="#" class="hover:text-accent-gold transition-colors">
+                            <i data-lucide="facebook" class="w-6 h-6"></i>
+                        </a>
+                        <a href="mailto:wise.gun.info@gmail.com" class="hover:text-accent-gold transition-colors">
+                            <i data-lucide="mail" class="w-6 h-6"></i>
+                        </a>
+                        <a href="#" class="hover:text-accent-gold transition-colors">
+                            <i data-lucide="instagram" class="w-6 h-6"></i>
+                        </a>
+                        <a href="#" class="hover:text-accent-gold transition-colors">
+                            <i data-lucide="youtube" class="w-6 h-6"></i>
+                        </a>
                     </div>
-                    <p class="text-xs text-gray-400">wise.gun.info@gmail.com | @WiseGunPH</p>
+                    <p class="text-sm">&copy; 2026 Wise Gun. All rights reserved.</p>
+                    <p class="text-xs mt-2 text-gray-500">wise.gun.info@gmail.com | @WiseGunPH</p>
                 </div>
-
-                <div class="pt-8 border-t border-white/5 w-full text-center">
-                    <p class="text-[10px] text-gray-500 uppercase tracking-widest">
-                        &copy; 2026 WISE GUN. Promoting Safe and Legal Firearm Ownership.
-                    </p>
-                </div>
-
             </div>
         </div>
     </footer>
 
     <script>
-
         lucide.createIcons();
     </script>
 </body>
