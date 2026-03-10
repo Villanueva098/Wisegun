@@ -211,8 +211,24 @@
             </div>
         </div>
     </footer>
+<script>
+    lucide.createIcons();
 
         
+        function startFeedback() {
+            
+            var rating = prompt("How helpful is our website? (Rate 1 to 5)", "5"); 
+            
+            var concerns = prompt("Please share your concerns or comments with us:");
+           
+            if (rating != null && concerns != null) {
+                
+                alert("Thank you for rating us " + rating + " and commenting on our website! Have a nice day. :)");
+            }
+        }
+    
+</script>
+    
     
 
 </body>
