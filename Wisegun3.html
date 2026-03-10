@@ -155,6 +155,17 @@
         </section>
 
     </main>
+
+    <!-- Floating feedback button -->
+    <div style="position: fixed; bottom: 24px; right: 24px; z-index: 9999;">
+        <button onclick="askForFeedback()"
+                style="background-color: #c89f3e; color: #1a1a1a; padding: 14px 28px; 
+                       border: none; border-radius: 9999px; font-weight: bold; cursor: pointer; 
+                       box-shadow: 0 6px 12px rgba(0,0,0,0.5); font-size: 1rem;">
+            ★ Feedback
+        </button>
+    </div>
+
     <footer class="bg-dark-bg text-light-text py-10 border-t border-accent-gold/20 mt-auto">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
@@ -212,8 +223,36 @@
         </div>
     </footer>
 
-    
-    
+    <script>
+        lucide.createIcons();
+
+        
+        function askForFeedback() {
+            let ratingInput = prompt("How would you rate our website? (1 to 5)", "5");
+            
+            
+            if (ratingInput === null) {
+                return;
+            }
+
+            let rating = parseFloat(ratingInput);
+
+            
+            if (isNaN(rating) || rating < 1 || rating > 5) {
+                alert("Please enter a number between 1 and 5 😊");
+                return;
+            }
+
+            let suggestion = prompt("What can we improve? You can leave it blank if you want.", "");
+            
+            if (suggestion === null) {
+                suggestion = "(no comment given)";
+            }
+
+            
+            alert("Thank you for your feedback!\n\nRating: " + rating + " / 5\nComment: " + suggestion + "\n\nHave a nice day! 🙂");
+        }
+    </script>
 
 </body>
 </html>
