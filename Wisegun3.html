@@ -5,254 +5,161 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wise Gun - Rules</title>
 
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
 
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'dark-bg': '#262626',
-                        'darker-bg': '#1a1a1a',
-                        'accent-gold': '#c89f3e', 
-                        'light-text': '#e0e0e0',
-                    },
-                }
-            }
+    <style>
+        :root {
+            --dark-bg: #262626;
+            --darker-bg: #1a1a1a;
+            --accent-gold: #c89f3e;
+            --light-text: #e0e0e0;
         }
-    </script>
-    <link rel="stylesheet" href="style.css"> 
+
+        body { background-color: var(--darker-bg); color: var(--light-text); font-family: sans-serif; }
+    
+        .bg-dark-custom { background-color: var(--dark-bg); }
+        .text-gold { color: var(--accent-gold) !important; }
+        .btn-gold { background-color: var(--accent-gold); color: var(--darker-bg); border: none; font-weight: bold; }
+        .btn-gold:hover { background-color: #b08b35; color: var(--darker-bg); }
+        
+        .nav-link { color: var(--light-text) !important; }
+        .nav-link:hover, .nav-link.active { color: var(--accent-gold) !important; }
+
+        .card-custom { border: none; border-radius: 0; box-shadow: 0 10px 30px rgba(0,0,0,0.5); height: 100%; }
+        .card-gold-body { background-color: var(--accent-gold); color: var(--darker-bg); text-align: center; padding: 2rem; }
+        
+        .icon-box { background: var(--accent-gold); width: 50px; height: 50px; transform: rotate(45deg); display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; }
+        .icon-box i { transform: rotate(-45deg); color: black; }
+
+        .footer { background-color: var(--dark-bg); border-top: 1px solid rgba(200, 159, 62, 0.2); padding: 3rem 0; }
+        
+        
+        .map-wrapper { border: 1px solid rgba(200, 159, 62, 0.3); border-radius: 15px; overflow: hidden; }
+    </style>
 </head>
 
-<body class="bg-darker-bg font-sans min-h-screen flex flex-col">
+<body>
 
-    <header class="sticky top-0 z-20 bg-dark-bg text-light-text shadow-xl">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+    <nav class="navbar navbar-expand-lg bg-dark-custom sticky-top py-3">
+        <div class="container">
+            <a class="navbar-brand text-gold fw-bold tracking-wider" href="#">WISE GUN</a>
             
-            <a href="index.html" class="text-xl font-bold tracking-wider text-accent-gold uppercase">WISE GUN</a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <i data-lucide="menu" class="text-gold"></i>
+            </button>
 
-            <div class="flex items-center space-x-4">
-                <nav class="hidden md:flex space-x-6 text-sm font-medium">
-                    <a href="index.html" class="text-light-text hover:text-accent-gold transition-colors">Home</a> 
-                    <a href="Wisegun2.html" class="text-light-text hover:text-accent-gold transition-colors">About & Explore</a> 
-                    <a href="Wisegun3.html" class="text-accent-gold">Rules</a> 
-                </nav>
-
-                <div class="relative group hidden sm:block">
-                    <button class="flex items-center space-x-1 p-2 rounded-lg hover:bg-darker-bg transition-colors text-light-text text-sm">
-                        <i data-lucide="globe" class="w-4 h-4 text-accent-gold"></i>
-                        <span>EN</span>
-                    </button>
-                </div>
-
-                <a href="#" class="py-2 px-4 bg-accent-gold text-darker-bg font-semibold rounded-lg shadow-md hover:bg-opacity-90 transition-colors text-sm">
-                    Log In / Sign Up
-                </a>
-
-                <div class="relative group">
-                    <button class="p-2 rounded-full hover:bg-darker-bg transition-colors">
-                        <i data-lucide="search" class="w-6 h-6 text-accent-gold"></i>
-                    </button>
-                </div>
-
-                <div class="relative group">
-                    <button class="p-2 rounded-full hover:bg-darker-bg transition-colors">
-                        <i data-lucide="menu" class="w-6 h-6 text-accent-gold"></i>
-                    </button>
-                    <nav class="absolute right-0 top-full mt-2 w-48 rounded-lg bg-darker-bg border border-dark-bg shadow-xl opacity-0 transition-opacity duration-300 group-hover:opacity-100 z-30">
-                        <ul class="text-light-text divide-y divide-dark-bg">
-                            <li><a href="index.html" class="block p-3 hover:bg-dark-bg">Home</a></li>
-                            <li><a href="Wisegun2.html" class="block p-3 hover:bg-dark-bg">About & Explore</a></li>
-                            <li><a href="Wisegun3.html" class="block p-3 hover:bg-dark-bg text-accent-gold">Safety</a></li>
-                            <li><a href="#" class="block p-3 hover:bg-dark-bg">Registration</a></li>
-                        </ul>
-                    </nav>
-                </div>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Wisegun2.html">About & Explore</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="Wisegun3.html">Rules</a></li>
+                    <li class="nav-item d-none d-lg-block">
+                        <span class="text-gold small"><i data-lucide="globe" class="mb-1" style="width:16px"></i> EN</span>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-gold px-4" href="#">Log In / Sign Up</a>
+                    </li>
+                </ul>
             </div>
         </div>
-    </header>
+    </nav>
 
-    <main class="flex-grow w-full max-w-7xl mx-auto px-4 pt-16">
+    <main class="container py-5 mt-4">
         
-        <h2 class="text-xl md:text-2xl font-bold text-accent-gold mb-12 italic uppercase tracking-tight">
-            Before you handle a gun - know the rules
-        </h2>
+        <h2 class="text-gold fst-italic text-uppercase mb-5">Before you handle a gun - know the rules</h2>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
-            
-            <div class="flex flex-col rounded-sm overflow-hidden shadow-2xl">
-                <div class="h-48 bg-black flex flex-col items-center justify-center">
-                    <div class="bg-accent-gold p-3 rotate-45 mb-4">
-                        <i data-lucide="shield-check" class="w-8 h-8 text-black -rotate-45"></i>
+        <div class="row g-4 mb-5">
+            <div class="col-md-4">
+                <div class="card card-custom h-100">
+                    <div class="bg-black d-flex flex-column align-items-center justify-content-center" style="height: 200px;">
+                        <div class="icon-box"><i data-lucide="shield-check"></i></div>
+                        <small class="text-white fw-bold text-uppercase tracking-widest">Gun Safety</small>
                     </div>
-                    <span class="text-white text-xs font-bold tracking-widest uppercase">Gun Safety</span>
-                </div>
-                <div class="p-8 flex-grow text-center" style="background-color: #c89f3e;">
-                    <h3 class="text-xl font-bold mb-4 italic uppercase text-darker-bg">basics: from safety</h3>
-                    <p class="text-darker-bg text-sm font-semibold leading-tight">
-                        learn the essentials for handling fire arms safely from checking if it's loaded to keeping your finger off the trigger
-                    </p>
+                    <div class="card-gold-body">
+                        <h3 class="h5 fw-bold text-uppercase fst-italic">basics: from safety</h3>
+                        <p class="small fw-bold m-0">learn the essentials for handling fire arms safely from checking if it's loaded to keeping your finger off the trigger</p>
+                    </div>
                 </div>
             </div>
 
-            <div class="flex flex-col rounded-sm overflow-hidden shadow-2xl">
-                <div class="h-48">
-                    <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=400" 
-                         class="w-full h-full object-cover" alt="Legal">
-                </div>
-                <div class="p-8 flex-grow text-center" style="background-color: #c89f3e;">
-                    <h3 class="text-xl font-bold mb-4 italic uppercase text-darker-bg">legal requirements</h3>
-                    <p class="text-darker-bg text-sm font-semibold leading-tight">
-                        understand the age limit, permits and documents you need before buying a gun
-                    </p>
+            <div class="col-md-4">
+                <div class="card card-custom h-100">
+                    <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=400" class="card-img-top" alt="Legal" style="height: 200px; object-fit: cover;">
+                    <div class="card-gold-body">
+                        <h3 class="h5 fw-bold text-uppercase fst-italic">legal requirements</h3>
+                        <p class="small fw-bold m-0">understand the age limit, permits and documents you need before buying a gun</p>
+                    </div>
                 </div>
             </div>
 
-            <div class="flex flex-col rounded-sm overflow-hidden shadow-2xl">
-                <div class="h-48">
-                    <img src="https://vivacious-gray-kaipt8citi.edgeone.app/images%20-%202026-02-20T231424.199.jpeg" 
-                         class="w-full h-full object-cover" alt="Storage">
-                </div>
-                <div class="p-8 flex-grow text-center" style="background-color: #c89f3e;">
-                    <h3 class="text-xl font-bold mb-4 italic uppercase text-darker-bg">responsible ownership</h3>
-                    <p class="text-darker-bg text-sm font-semibold leading-tight">
-                        learn about proper storage, secure transport and preventing authorized user of your gun
-                    </p>
+            <div class="col-md-4">
+                <div class="card card-custom h-100">
+                    <img src="https://vivacious-gray-kaipt8citi.edgeone.app/images%20-%202026-02-20T231424.199.jpeg" class="card-img-top" alt="Storage" style="height: 200px; object-fit: cover;">
+                    <div class="card-gold-body">
+                        <h3 class="h5 fw-bold text-uppercase fst-italic">responsible ownership</h3>
+                        <p class="small fw-bold m-0">learn about proper storage, secure transport and preventing authorized user of your gun</p>
+                    </div>
                 </div>
             </div>
-
         </div>
 
-        <section class="mb-20">
-            <h3 class="text-2xl font-bold text-accent-gold mb-6 uppercase tracking-wide text-center">
-                Gun Shops & Registration Areas in Calabarzon
-            </h3>
-            <p class="text-light-text text-center mb-6 text-sm max-w-3xl mx-auto">
-                Interactive Google Map with marked gun shops/dealers and example PNP FEO/registration spots in Calabarzon (Region IV-A).<br>
-                <span class="text-xs opacity-80">
-                    <strong>Zoom, drag, and click pins</strong> for details. 
-                    For reference only — always verify current licenses and locations directly with official PNP FEO: 
-                    <a href="https://feo.csg.pnp.gov.ph/" target="_blank" class="underline hover:text-accent-gold">feo.csg.pnp.gov.ph</a>.
-                </span>
+        <section class="text-center py-5">
+            <h3 class="text-gold fw-bold text-uppercase mb-3">Gun Shops & Registration Areas in Calabarzon</h3>
+            <p class="small mb-4 mx-auto" style="max-width: 700px;">
+                Interactive Google Map with marked gun shops/dealers and example PNP FEO/registration spots. 
+                Always verify current licenses at <a href="https://feo.csg.pnp.gov.ph/" class="text-gold">feo.csg.pnp.gov.ph</a>.
             </p>
-
-            <div class="rounded-xl overflow-hidden shadow-2xl border border-accent-gold/30 mx-auto max-w-5xl">
-                <iframe 
-                    src="https://www.google.com/maps/d/embed?mid=1BpgtTpX8uCzgm6ix4BklXCCen5_HERM"
-                    width="100%" 
-                    height="500" 
-                    style="border:0;" 
-                    allowfullscreen="" 
-                    loading="lazy" 
-                    referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
+            <div class="map-wrapper shadow-lg">
+                <iframe src="https://www.google.com/maps/d/embed?mid=1BpgtTpX8uCzgm6ix4BklXCCen5_HERM" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </div>
-
-            <p class="text-xs text-center mt-4 opacity-70">
-                Map created with Google My Maps • Mobile-friendly • Click pins for shop/registration info
-            </p>
         </section>
 
     </main>
 
-    <!-- Floating feedback button -->
-    <div style="position: fixed; bottom: 24px; right: 24px; z-index: 9999;">
-        <button onclick="askForFeedback()"
-                style="background-color: #c89f3e; color: #1a1a1a; padding: 14px 28px; 
-                       border: none; border-radius: 9999px; font-weight: bold; cursor: pointer; 
-                       box-shadow: 0 6px 12px rgba(0,0,0,0.5); font-size: 1rem;">
-            ★ Feedback
-        </button>
-    </div>
+    <button onclick="askForFeedback()" class="btn btn-gold rounded-pill position-fixed shadow-lg" style="bottom: 24px; right: 24px; z-index: 1050; padding: 12px 25px;">
+        ★ Feedback
+    </button>
 
-    <footer class="bg-dark-bg text-light-text py-10 border-t border-accent-gold/20 mt-auto">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-
-                <div>
-                    <a href="index.html" class="text-2xl font-bold tracking-wider text-accent-gold uppercase block mb-4">WISE GUN</a>
-                    <p class="text-sm leading-relaxed opacity-80">
-                        Promoting safe, responsible, and legal firearm ownership in the Philippines.
-                    </p>
+    <footer class="footer mt-5">
+        <div class="container">
+            <div class="row gy-4">
+                <div class="col-md-3">
+                    <h5 class="text-gold fw-bold mb-3">WISE GUN</h5>
+                    <p class="small opacity-75">Promoting safe, responsible, and legal firearm ownership in the Philippines.</p>
                 </div>
-
-                <div>
-                    <h4 class="text-accent-gold font-semibold mb-4 uppercase tracking-wide text-sm">Quick Links</h4>
-                    <ul class="space-y-2 text-sm">
-                        <li><a href="index.html" class="hover:text-accent-gold transition-colors">Home</a></li>
-                        <li><a href="Wisegun2.html" class="hover:text-accent-gold transition-colors">About & Explore</a></li>
-                        <li><a href="Wisegun3.html" class="hover:text-accent-gold transition-colors">Rules & Safety</a></li>
-                        <li><a href="#" class="hover:text-accent-gold transition-colors">Registration</a></li>
+                <div class="col-md-3">
+                    <h6 class="text-gold text-uppercase small fw-bold mb-3">Quick Links</h6>
+                    <ul class="list-unstyled small">
+                        <li><a href="#" class="text-decoration-none text-light opacity-75">Home</a></li>
+                        <li><a href="#" class="text-decoration-none text-light opacity-75">About</a></li>
+                        <li><a href="#" class="text-decoration-none text-light opacity-75">Rules</a></li>
                     </ul>
                 </div>
-
-                <div>
-                    <h4 class="text-accent-gold font-semibold mb-4 uppercase tracking-wide text-sm">Contact</h4>
-                    <ul class="space-y-2 text-sm">
-                        <li class="flex items-center">
-                            <i data-lucide="mail" class="w-4 h-4 mr-2 text-accent-gold"></i>
-                            <a href="mailto:info@wisegun.ph" class="hover:text-accent-gold transition-colors">info@wisegun.ph</a>
-                        </li>
-                        <li class="flex items-center">
-                            <i data-lucide="phone" class="w-4 h-4 mr-2 text-accent-gold"></i>
-                            <span>+63 (2) 8-123-4567</span>
-                        </li>
-                    </ul>
+                <div class="col-md-3">
+                    <h6 class="text-gold text-uppercase small fw-bold mb-3">Contact</h6>
+                    <p class="small mb-1 opacity-75"><i data-lucide="mail" class="me-2" style="width:14px"></i> info@wisegun.ph</p>
+                    <p class="small opacity-75"><i data-lucide="phone" class="me-2" style="width:14px"></i> +63 (2) 8-123-4567</p>
                 </div>
-
-                <div class="md:text-right">
-                    <div class="flex md:justify-end space-x-4 mb-6">
-                        <a href="#" class="hover:text-accent-gold transition-colors">
-                            <i data-lucide="facebook" class="w-6 h-6"></i>
-                        </a>
-                        <a href="#" class="hover:text-accent-gold transition-colors">
-                            <i data-lucide="instagram" class="w-6 h-6"></i>
-                        </a>
-                        <a href="#" class="hover:text-accent-gold transition-colors">
-                            <i data-lucide="youtube" class="w-6 h-6"></i>
-                        </a>
+                <div class="col-md-3 text-md-end">
+                    <div class="mb-3">
+                        <i data-lucide="facebook" class="me-3"></i>
+                        <i data-lucide="instagram" class="me-3"></i>
+                        <i data-lucide="youtube"></i>
                     </div>
-                    <p class="text-xs opacity-70">
-                        © 2026 Wise Gun. All rights reserved.<br>
-                        Committed to firearm safety and Philippine law compliance.
-                    </p>
+                    <p class="x-small opacity-50 mb-0">© 2026 Wise Gun. All rights reserved.</p>
                 </div>
-
             </div>
         </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         lucide.createIcons();
-
-        
         function askForFeedback() {
-            let ratingInput = prompt("How would you rate our website? (1 to 5)", "5");
-            
-            
-            if (ratingInput === null) {
-                return;
-            }
-
-            let rating = parseFloat(ratingInput);
-
-            
-            if (isNaN(rating) || rating < 1 || rating > 5) {
-                alert("Please enter a number between 1 and 5 😊");
-                return;
-            }
-
-            let suggestion = prompt("What can we improve? You can leave it blank if you want.", "");
-            
-            if (suggestion === null) {
-                suggestion = "(no comment given)";
-            }
-
-            
-            alert("Thank you for your feedback!\n\nRating: " + rating + " / 5\nComment: " + suggestion + "\n\nHave a nice day! 🙂");
+            let rating = prompt("How would you rate our website? (1 to 5)", "5");
+            if (rating) alert("Thank you! You rated us " + rating + "/5.");
         }
     </script>
-
 </body>
 </html>
