@@ -6,84 +6,25 @@
     <title>Wise Gun - Reliable Companion</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+
     <script src="https://unpkg.com/lucide@latest"></script>
-
-    <style>
-        :root {
-            --dark-bg: #262626;
-            --darker-bg: #1a1a1a;
-            --accent-gold: #c89f3e; 
-            --light-text: #e0e0e0;
-        }
-
-        body {
-            background-color: var(--darker-bg);
-            color: var(--light-text);
-            font-family: sans-serif;
-        }
-
-
-        .navbar-custom { background-color: var(--dark-bg); box-shadow: 0 10px 15px rgba(0,0,0,0.3); }
-        .navbar-brand { color: var(--accent-gold) !important; font-weight: bold; letter-spacing: 2px; }
-        .nav-link { color: var(--light-text) !important; font-size: 0.9rem; transition: 0.3s; }
-        .nav-link:hover, .nav-link.active { color: var(--accent-gold) !important; }
-        
-        .btn-gold { 
-            background-color: var(--accent-gold); 
-            color: var(--darker-bg); 
-            font-weight: 600; 
-            border: none;
-        }
-        .btn-gold:hover { background-color: #b08b35; color: var(--darker-bg); }
-
-        
-        .carousel-item {
-            height: 70vh;
-            min-height: 400px;
-            background-color: #333;
-            background-position: center;
-            background-size: cover;
-        }
-        .carousel-overlay {
-            background: rgba(0, 0, 0, 0.4);
-            height: 100%;
-            display: flex;
-            align-items: center;
-            padding: 0 10%;
-        }
-        .carousel-indicators [data-bs-target] {
-            background-color: var(--accent-gold);
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            margin: 0 5px;
-        }
-
-        
-        .footer-custom { background-color: var(--dark-bg); color: var(--light-text); border-top: 1px solid rgba(200, 159, 62, 0.1); }
-        .footer-link { color: var(--accent-gold); text-decoration: none; transition: 0.3s; }
-        .footer-link:hover { color: var(--light-text); }
-    </style>
 </head>
-
 <body class="min-vh-100 d-flex flex-column">
 
-    <nav class="navbar navbar-expand-lg navbar-custom sticky-top py-3">
+    <nav class="navbar navbar-expand-lg sticky-top navbar-dark py-3">
         <div class="container">
-            <a class="navbar-brand" href="index.html">WISE GUN</a>
-            
-            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <i data-lucide="menu" style="color: var(--accent-gold);"></i>
+            <a class="navbar-brand text-uppercase" href="index.html">Wise Gun</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+                <span class="navbar-toggler-icon"></span>
             </button>
-
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto align-items-center gap-lg-3">
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav ms-auto align-items-center">
                     <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="Wisegun2.html">About & Explore</a></li>
                     <li class="nav-item"><a class="nav-link" href="Wisegun3.html">Rules</a></li>
-                    <li class="nav-item">
-                        <a class="btn btn-gold px-4 rounded-3" href="#">Log In / Sign Up</a>
-                    </li>
+                    <li class="nav-item ms-lg-3"><a class="btn btn-gold px-4" href="#">Log In</a></li>
                 </ul>
             </div>
         </div>
@@ -92,62 +33,31 @@
     <main class="flex-grow-1">
         <div class="container mt-4">
             <div id="heroCarousel" class="carousel slide carousel-fade shadow-lg rounded-4 overflow-hidden" data-bs-ride="carousel">
-                <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
-                    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
-                    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
-                </div>
-                
                 <div class="carousel-inner">
-                    <div class="carousel-item active" style="background-image: url('https://competitive-crimson-govao8p8qv.edgeone.app/premium_photo-1663075817635-90ecf218ee5f.jpeg');">
-                        <div class="carousel-overlay">
-                            <div class="max-w-lg">
-                                <h1 class="display-3 fw-bold mb-3" style="color: var(--accent-gold); letter-spacing: -2px;">WISE GUN</h1>
-                                <p class="h4 fst-italic fw-light opacity-90">a reliable companion for guiding in buying and registering a gun.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item" style="background-image: url('https://front-ivory-qp3m06xdp3.edgeone.app/IMG-6176.jpg');">
-                        <div class="carousel-overlay">
-                            <div class="max-w-lg">
-                                <h2 class="display-4 fw-bold mb-3" style="color: var(--accent-gold);">Expert Safety Guides</h2>
-                                <p class="h5 fw-light">Learn essential rules and practices for safe firearm handling.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item" style="background-image: url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1200');">
-                        <div class="carousel-overlay">
-                            <div class="max-w-lg">
-                                <h2 class="display-4 fw-bold mb-3" style="color: var(--accent-gold);">Legislation Made Simple</h2>
-                                <p class="h5 fw-light">Step-by-step instructions for registration and legal compliance.</p>
+                    <div class="carousel-item active" style="background-image: url('https://images.unsplash.com/photo-1595232063300-366f076191c9?auto=format&fit=crop&w=1200');">
+                        <div class="carousel-caption-overlay">
+                            <div>
+                                <h1 class="display-3 fw-bold text-uppercase text-gold" style="color: var(--accent-gold);">Wise Gun</h1>
+                                <p class="h4 fst-italic opacity-75">Your guide to legal firearm ownership.</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <div class="row mt-5 g-4">
+                <div class="col-md-4">
+                    <div class="card custom-card h-100 text-center p-4">
+                        <i data-lucide="shield" class="mx-auto mb-3" style="color: var(--accent-gold)"></i>
+                        <h5 class="fw-bold" style="color: var(--accent-gold)">Safety First</h5>
+                        <p class="small opacity-75">Ensuring proper handling protocols.</p>
+                    </div>
+                </div>
+                </div>
         </div>
     </main>
 
-    <footer class="footer-custom mt-5 py-5">
-        <div class="container text-center">
-            <p class="small text-secondary mb-2">&copy; WISE GUN 2025 | Promoting Safe and Legal Firearm Ownership.</p>
-            <p class="small text-secondary mb-4">Contact: wise.gun.info@gmail.com | Facebook: @WiseGunPH</p>
-            
-            <div class="d-flex justify-content-center gap-3 small fw-bold">
-                <a href="index.html" class="footer-link">Home</a>
-                <span class="text-secondary opacity-25">|</span>
-                <a href="Wisegun2.html" class="footer-link">About</a>
-                <span class="text-secondary opacity-25">|</span>
-                <a href="Wisegun3.html" class="footer-link">Safety</a>
-                <span class="text-secondary opacity-25">|</span>
-                <a href="#" class="footer-link">Registration</a>
-            </div>
-        </div>
-    </footer>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        lucide.createIcons();
-    </script>
+    <script>lucide.createIcons();</script>
 </body>
 </html>
