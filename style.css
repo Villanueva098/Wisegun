@@ -1,4 +1,4 @@
-/* --- Global & Variables --- */
+
 :root {
     --dark-bg: #262626;
     --darker-bg: #1a1a1a;
@@ -16,7 +16,6 @@ body {
     flex-direction: column;
 }
 
-/* --- Shared Components (Nav & Footer) --- */
 .navbar-custom { background-color: var(--dark-bg); box-shadow: 0 10px 15px rgba(0,0,0,0.3); }
 .navbar-brand { color: var(--accent-gold) !important; font-weight: bold; letter-spacing: 2px; }
 .nav-link { color: var(--light-text) !important; font-size: 0.9rem; transition: var(--transition-speed); }
@@ -40,7 +39,7 @@ body {
 .footer-link { color: var(--light-text); text-decoration: none; font-size: 0.9rem; transition: var(--transition-speed); }
 .footer-link:hover { color: var(--accent-gold); }
 
-/* --- Home Page Specific (Carousel) --- */
+
 .carousel-item {
     height: 90vh;
     min-height: 600px;
@@ -55,8 +54,7 @@ body {
     padding: 0 10%;
 }
 
-/* --- Page 2 Specific --- */
-/* --- About/Explore Page Styles --- */
+
 .section-header {
     border-top: 1px solid rgba(200, 159, 62, 0.3);
     border-bottom: 1px solid rgba(200, 159, 62, 0.3);
@@ -70,7 +68,7 @@ body {
 
 .about-img {
     width: 100%;
-    aspect-ratio: 4 / 3; /* Forces a consistent shape for both */
+    aspect-ratio: 4 / 3;
     background-size: cover;
     background-position: center;
     border-radius: 8px;
@@ -93,7 +91,7 @@ body {
 .card-body-custom { 
     padding: 1.5rem; 
     color: #000; 
-    flex-grow: 1; /* Makes cards equal height */
+    flex-grow: 1; 
     display: flex; 
     flex-direction: column; 
     justify-content: space-between; 
@@ -110,7 +108,6 @@ body {
 }
 .btn-dark-custom:hover { opacity: 0.9; color: var(--accent-gold); }
 
-/* --- Responsive Fixes --- */
 @media (max-width: 768px) {
     .carousel-item { height: 60vh; }
 }
