@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wise Gun - Reliable Companion</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap-grid.min.css" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
 
     <style>
@@ -20,6 +20,8 @@
             background-color: var(--darker-bg);
             color: var(--light-text);
             font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            overflow-x: hidden;
         }
 
         
@@ -32,59 +34,82 @@
             justify-content: space-between;
             position: sticky;
             top: 0;
-            z-index: 1050;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+            z-index: 1000;
         }
 
-        .logo {
-            color: var(--accent-gold);
-            text-decoration: none;
-            font-weight: bold;
-            letter-spacing: 2px;
-            font-size: 1.2rem;
-            text-transform: uppercase;
-        }
+        .logo { color: var(--accent-gold); text-decoration: none; font-weight: bold; letter-spacing: 2px; }
+        .custom-nav a { color: var(--light-text); text-decoration: none; margin: 0 15px; font-size: 0.9rem; }
+        .custom-nav a.active { color: var(--accent-gold); }
 
-        .custom-nav a {
-            color: var(--light-text);
-            text-decoration: none;
-            margin: 0 15px;
-            font-size: 0.9rem;
-            transition: 0.3s;
-            font-weight: 500;
-        }
 
-        .custom-nav a:hover, .custom-nav a.active {
-            color: var(--accent-gold);
-        }
-
-        .auth-btn {
-            background-color: var(--accent-gold);
-            color: var(--darker-bg);
-            padding: 8px 20px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.85rem;
-            margin-right: 15px;
-        }
-
-        
-        .carousel-item {
+        .slider-container {
+            position: relative;
+            width: 100%;
             height: 65vh;
+            overflow: hidden;
+            border-radius: 15px;
+            margin-top: 1rem;
+        }
+
+        .slider-track {
+            display: flex;
+            width: 300%; 
+            height: 100%;
+            animation: slide-animation 15s infinite ease-in-out;
+        }
+
+        .slide {
+            width: 33.333%;
+            height: 100%;
+            position: relative;
             background-size: cover;
             background-position: center;
         }
-        .carousel-caption-custom {
+
+        
+        .slide-1 { background-image: url('https://images.unsplash.com/photo-1595232063300-366f076191c9?auto=format&fit=crop&w=1200'); }
+        .slide-2 { background-image: url('https://images.unsplash.com/photo-1584285418504-0051b6d61081?auto=format&fit=crop&w=1200'); }
+        .slide-3 { background-image: url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1200'); }
+
+        .slide-overlay {
             position: absolute;
             inset: 0;
-            background: rgba(0,0,0,0.4);
+            background: rgba(0,0,0,0.5);
             display: flex;
             align-items: center;
-            padding-left: 10%;
+            padding: 0 10%;
         }
-        .carousel-indicators [data-bs-target] {
-            background-color: var(--accent-gold);
+
+        @keyframes slide-animation {
+            0%, 20% { transform: translateX(0); }
+            33%, 53% { transform: translateX(-33.333%); }
+            66%, 86% { transform: translateX(-66.666%); }
+            100% { transform: translateX(0); }
+        }
+
+        .dots-container {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--light-text);
+            opacity: 0.4;
+        }
+
+        /
+        .custom-footer {
+            background-color: var(--dark-bg);
+            padding: 2rem 0;
+            text-align: center;
+            margin-top: 4rem;
         }
     </style>
 </head>
@@ -93,100 +118,64 @@
 
     <header class="custom-header">
         <a href="index.html" class="logo">WISE GUN</a>
-        
-        <nav class="custom-nav d-none d-lg-block">
+        <nav class="custom-nav d-none d-md-block">
             <a href="index.html" class="active">Home</a>
             <a href="Wisegun2.html">About & Explore</a>
             <a href="Wisegun3.html">Rules</a>
         </nav>
-
-        <div class="d-flex align-items-center">
-            <a href="#" class="auth-btn d-none d-sm-block">Log In / Sign Up</a>
-            <div class="d-flex gap-3">
-                <i data-lucide="search" style="color: var(--accent-gold); cursor: pointer;"></i>
-                <i data-lucide="menu" style="color: var(--accent-gold); cursor: pointer;"></i>
-            </div>
+        <div style="display:flex; align-items:center; gap:15px;">
+            <i data-lucide="search" style="color:var(--accent-gold)"></i>
+            <i data-lucide="menu" style="color:var(--accent-gold)"></i>
         </div>
     </header>
 
-    <main class="container mt-4">
-        
-        <div id="heroSlider" class="carousel slide carousel-fade shadow-lg rounded-4 overflow-hidden" data-bs-ride="carousel">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#heroSlider" data-bs-slide-to="0" class="active"></button>
-                <button type="button" data-bs-target="#heroSlider" data-bs-slide-to="1"></button>
-                <button type="button" data-bs-target="#heroSlider" data-bs-slide-to="2"></button>
-            </div>
-
-            <div class="carousel-inner">
-                <div class="carousel-item active" style="background-image: url('https://images.unsplash.com/photo-1595232063300-366f076191c9?auto=format&fit=crop&w=1200');">
-                    <div class="carousel-caption-custom">
-                        <div class="text-start">
-                            <h1 class="display-3 fw-bold text-uppercase" style="color: var(--accent-gold); letter-spacing: -2px;">Wise Gun</h1>
-                            <p class="h4 fst-italic opacity-75">a reliable companion for guiding in buying and registering a gun.</p>
+    <main class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="slider-container shadow-lg">
+                    <div class="slider-track">
+                        <div class="slide slide-1">
+                            <div class="slide-overlay">
+                                <div>
+                                    <h1 style="color:var(--accent-gold); font-size: 3.5rem; margin:0;">WISE GUN</h1>
+                                    <p style="font-style:italic; font-size:1.2rem;">a reliable companion for guiding in buying and registering a gun.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slide slide-2">
+                            <div class="slide-overlay">
+                                <div>
+                                    <h2 style="color:var(--accent-gold); font-size: 3rem; margin:0;">Safety First</h2>
+                                    <p style="font-size:1.2rem;">Learn essential practices for safe handling.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slide slide-3">
+                            <div class="slide-overlay">
+                                <div>
+                                    <h2 style="color:var(--accent-gold); font-size: 3rem; margin:0;">Registration</h2>
+                                    <p style="font-size:1.2rem;">Official PNP FEO guidance and steps.</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="carousel-item" style="background-image: url('https://images.unsplash.com/photo-1584285418504-0051b6d61081?auto=format&fit=crop&w=1200');">
-                    <div class="carousel-caption-custom">
-                        <div class="text-start">
-                            <h2 class="display-4 fw-bold text-uppercase" style="color: var(--accent-gold);">Expert Safety</h2>
-                            <p class="h5">Learn essential rules and practices for safe handling.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item" style="background-image: url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1200');">
-                    <div class="carousel-caption-custom">
-                        <div class="text-start">
-                            <h2 class="display-4 fw-bold text-uppercase" style="color: var(--accent-gold);">Legislation</h2>
-                            <p class="h5">Step-by-step instructions for legal registration.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-            <button class="carousel-control-prev" type="button" data-bs-target="#heroSlider" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon"></span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#heroSlider" data-bs-slide="next">
-                <span class="carousel-control-next-icon"></span>
-            </button>
-        </div>
-
-        <div class="row mt-5 g-4 text-center">
-            <div class="col-md-4">
-                <div class="p-4 rounded-3 border border-secondary h-100">
-                    <i data-lucide="shield" class="mb-3" style="color: var(--accent-gold)"></i>
-                    <h5 class="text-gold fw-bold">Verified Safety</h5>
-                    <p class="small opacity-75">Ensuring every owner knows the proper handling protocols.</p>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="p-4 rounded-3 border border-secondary h-100">
-                    <i data-lucide="file-text" class="mb-3" style="color: var(--accent-gold)"></i>
-                    <h5 class="text-gold fw-bold">Legal Guidance</h5>
-                    <p class="small opacity-75">Direct links to PNP FEO and registration requirements.</p>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="p-4 rounded-3 border border-secondary h-100">
-                    <i data-lucide="map-pin" class="mb-3" style="color: var(--accent-gold)"></i>
-                    <h5 class="text-gold fw-bold">Shop Locator</h5>
-                    <p class="small opacity-75">Find the most reliable and authorized shops in Calabarzon.</p>
+                    <div class="dots-container">
+                        <div class="dot" style="background:var(--accent-gold); opacity:1;"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                    </div>
                 </div>
             </div>
         </div>
     </main>
 
-    <footer class="py-5 mt-5 bg-dark shadow-lg">
-        <div class="container text-center">
-            <p class="small text-secondary">&copy; WISE GUN 2026 | Safe and Legal Ownership</p>
-        </div>
+    <footer class="custom-footer">
+        <p style="font-size:0.8rem; opacity:0.5;">© WISE GUN 2026 | Promoting Safe and Legal Firearm Ownership.</p>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         lucide.createIcons();
     </script>
 </body>
-</html>
+    </html>
