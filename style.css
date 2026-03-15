@@ -9,38 +9,44 @@
 body {
     background-color: var(--darker-bg);
     color: var(--light-text);
-    font-family: 'Segoe UI', sans-serif;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+    font-family: sans-serif;
 }
 
-/* --- CUSTOM HEADER (OWN MADE) --- */
-.custom-header {
-    background-color: var(--dark-bg);
-    padding: 0 2rem;
-    height: 64px;
+/* --- NAVBAR (CLEAN BOOTSTRAP STYLE) --- */
+.navbar {
+    background-color: var(--dark-bg) !important;
+    border-bottom: 1px solid rgba(200, 159, 62, 0.2);
+}
+.navbar-brand {
+    color: var(--accent-gold) !important;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+.nav-link {
+    color: var(--light-text) !important;
+}
+.nav-link:hover, .nav-link.active {
+    color: var(--accent-gold) !important;
+}
+
+/* --- CAROUSEL (CLEAN) --- */
+.carousel-item {
+    height: 65vh;
+    min-height: 400px;
+    background-size: cover;
+    background-position: center;
+}
+.carousel-caption-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    position: sticky;
-    top: 0;
-    z-index: 1050;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    padding-left: 10%;
 }
-
-.logo { color: var(--accent-gold); text-decoration: none; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; font-size: 1.2rem; }
-.custom-nav a { color: var(--light-text); text-decoration: none; margin: 0 15px; font-size: 0.9rem; transition: 0.3s; font-weight: 500; }
-.custom-nav a:hover, .custom-nav a.active { color: var(--accent-gold); }
-
-/* --- CAROUSEL & CARDS --- */
-.carousel-item { height: 65vh; background-size: cover; background-position: center; }
-.carousel-caption-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.5); display: flex; align-items: center; padding-left: 10%; }
-
-.explore-card { background-color: var(--accent-gold); border: none; border-radius: 12px; height: 100%; transition: 0.3s; }
-.explore-card:hover { transform: translateY(-10px); }
-.card-body-custom { padding: 2rem; color: var(--darker-bg); text-align: center; }
-.btn-custom-dark { background-color: var(--darker-bg); color: var(--accent-gold); font-weight: 600; border-radius: 6px; padding: 10px 25px; text-decoration: none; display: inline-block; }
-
-/* --- FOOTER --- */
-.custom-footer { background-color: var(--dark-bg); padding: 3rem 0; margin-top: auto; text-align: center; border-top: 1px solid rgba(200, 159, 62, 0.2); }
+.btn-gold {
+    background-color: var(--accent-gold);
+    color: var(--darker-bg);
+    font-weight: 600;
+    border: none;
+}
