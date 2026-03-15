@@ -1,83 +1,195 @@
 :root {
-    --dark-bg: #262626;
-    --darker-bg: #1a1a1a;
-    --accent-gold: #c89f3e; 
-    --light-text: #e0e0e0;
+  --dark-bg: #262626;
+  --darker-bg: #1a1a1a;
+  --accent-gold: #c89f3e;
+  --light-text: #e0e0e0;
+  --shadow-main: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
 body {
-    background-color: var(--darker-bg) !important;
-    color: var(--light-text);
-    font-family: sans-serif;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+  background-color: var(--darker-bg) !important;
+  color: var(--light-text);
+  font-family: sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
 }
 
+/* Navigation */
+.navbar-custom, .bg-dark-custom {
+  background-color: var(--dark-bg);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
 
-.navbar-custom { background-color: var(--dark-bg); box-shadow: 0 4px 10px rgba(0,0,0,0.5); }
-.navbar-brand { color: var(--accent-gold) !important; font-weight: bold; letter-spacing: 2px; }
-.nav-link { color: var(--light-text) !important; font-size: 0.9rem; transition: 0.3s; }
-.nav-link:hover, .nav-link.active { color: var(--accent-gold) !important; }
+.navbar-brand {
+  color: var(--accent-gold) !important;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
 
-.btn-gold { background-color: var(--accent-gold); color: #000; font-weight: 600; border: none; }
-.btn-gold:hover { background-color: #b08b35; color: #000; }
+.nav-link {
+  color: var(--light-text) !important;
+  font-size: 0.9rem;
+  transition: 0.3s;
+}
 
-.main-footer { background-color: var(--dark-bg); padding: 3rem 0; border-top: 1px solid #c89f3e; margin-top: auto; }
-.footer-title { color: var(--accent-gold); text-transform: uppercase; font-weight: bold; }
-.footer-link { color: var(--light-text); text-decoration: none; font-size: 0.9rem; }
-.footer-link:hover { color: var(--accent-gold); }
+.nav-link:hover, .nav-link.active {
+  color: var(--accent-gold) !important;
+}
 
+/* Buttons */
+.btn-gold {
+  background-color: var(--accent-gold);
+  color: #000;
+  font-weight: 600;
+  border: none;
+  transition: 0.3s;
+}
 
+.btn-gold:hover {
+  background-color: #b08b35;
+  color: #000;
+}
+
+.btn-dark-custom {
+  background-color: var(--darker-bg);
+  color: var(--accent-gold);
+  padding: 10px;
+  text-decoration: none;
+  border-radius: 6px;
+  text-align: center;
+}
+
+/* Carousel */
 .carousel-wrapper {
-    max-width: 1400px;
-    margin: 0 auto;
-    width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
 }
 
 .carousel-item {
-    height: 75vh;
-    min-height: 500px;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    filter: brightness(0.9);
+  height: 75vh;
+  min-height: 500px;
+  background-position: center;
+  background-size: cover;
+  filter: brightness(0.9);
 }
 
 .carousel-overlay {
-    background: linear-gradient(135deg, rgba(0,0,0,0.85), rgba(0,0,0,0.4));
-    height: 100%;
-    display: flex;
-    align-items: center;
-    padding: 0 10%;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.4));
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 10%;
 }
 
-
+/* About & Cards */
 .section-header {
-    border-top: 1px solid rgba(200, 159, 62, 0.3);
-    border-bottom: 1px solid rgba(200, 159, 62, 0.3);
-    padding: 2rem 0;
-    margin-bottom: 3rem;
-    color: var(--accent-gold);
-    text-transform: uppercase;
-    font-weight: bold;
-    text-align: center;
+  border-top: 1px solid rgba(200, 159, 62, 0.3);
+  border-bottom: 1px solid rgba(200, 159, 62, 0.3);
+  padding: 2rem 0;
+  margin-bottom: 3rem;
+  color: var(--accent-gold);
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: center;
 }
 
 .about-img {
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    background-size: cover;
-    background-position: center;
-    border-radius: 8px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  box-shadow: var(--shadow-main);
 }
 
-.explore-card { background-color: var(--accent-gold); border-radius: 12px; height: 100%; overflow: hidden; }
-.card-img-top { height: 200px; background-size: cover; background-position: center; }
-.card-body-custom { padding: 1.5rem; color: #000; display: flex; flex-direction: column; justify-content: space-between; }
-.btn-dark-custom { background-color: var(--darker-bg); color: var(--accent-gold); padding: 10px; text-decoration: none; border-radius: 6px; text-align: center; }
+.explore-card {
+  background-color: var(--accent-gold);
+  border-radius: 12px;
+  height: 100%;
+  overflow: hidden;
+}
 
+.card-img-top {
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+}
+
+.card-body-custom {
+  padding: 1.5rem;
+  color: #000;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Rules Page */
+.card-custom {
+  border: none;
+  border-radius: 0;
+  box-shadow: var(--shadow-main);
+  height: 100%;
+}
+
+.card-gold-body {
+  background-color: var(--accent-gold);
+  color: var(--darker-bg);
+  text-align: center;
+  padding: 2rem;
+}
+
+.icon-box {
+  background: var(--accent-gold);
+  width: 50px;
+  height: 50px;
+  transform: rotate(45deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.icon-box i {
+  transform: rotate(-45deg);
+  color: black;
+}
+
+.map-wrapper {
+  border: 1px solid rgba(200, 159, 62, 0.3);
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+/* Footer & Utils */
+.main-footer {
+  background-color: var(--dark-bg);
+  padding: 3rem 0;
+  border-top: 1px solid var(--accent-gold);
+  margin-top: auto;
+}
+
+.footer-link {
+  color: var(--light-text);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.footer-link:hover {
+  color: var(--accent-gold);
+}
+
+.text-gold {
+  color: var(--accent-gold) !important;
+}
+
+/* Responsive */
 @media (max-width: 768px) {
-    .carousel-item { height: 60vh; min-height: 400px; }
-}
+  .carousel-item {
+    height: 60vh;
+    min-height: 400px;
+  }
+    }
