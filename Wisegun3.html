@@ -6,44 +6,15 @@
     <title>Wise Gun - Rules</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
     <script src="https://unpkg.com/lucide@latest"></script>
-
-    <style>
-        :root {
-            --dark-bg: #262626;
-            --darker-bg: #1a1a1a;
-            --accent-gold: #c89f3e;
-            --light-text: #e0e0e0;
-        }
-
-        body { background-color: var(--darker-bg); color: var(--light-text); font-family: sans-serif; }
-    
-        .bg-dark-custom { background-color: var(--dark-bg); }
-        .text-gold { color: var(--accent-gold) !important; }
-        .btn-gold { background-color: var(--accent-gold); color: var(--darker-bg); border: none; font-weight: bold; }
-        .btn-gold:hover { background-color: #b08b35; color: var(--darker-bg); }
-        
-        .nav-link { color: var(--light-text) !important; }
-        .nav-link:hover, .nav-link.active { color: var(--accent-gold) !important; }
-
-        .card-custom { border: none; border-radius: 0; box-shadow: 0 10px 30px rgba(0,0,0,0.5); height: 100%; }
-        .card-gold-body { background-color: var(--accent-gold); color: var(--darker-bg); text-align: center; padding: 2rem; }
-        
-        .icon-box { background: var(--accent-gold); width: 50px; height: 50px; transform: rotate(45deg); display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; }
-        .icon-box i { transform: rotate(-45deg); color: black; }
-
-        .footer { background-color: var(--dark-bg); border-top: 1px solid rgba(200, 159, 62, 0.2); padding: 3rem 0; }
-        
-        
-        .map-wrapper { border: 1px solid rgba(200, 159, 62, 0.3); border-radius: 15px; overflow: hidden; }
-    </style>
 </head>
 
 <body>
 
     <nav class="navbar navbar-expand-lg bg-dark-custom sticky-top py-3">
         <div class="container">
-            <a class="navbar-brand text-gold fw-bold tracking-wider" href="#">WISE GUN</a>
+            <a class="navbar-brand text-gold fw-bold tracking-wider" href="index.html">WISE GUN</a>
             
             <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <i data-lucide="menu" class="text-gold"></i>
@@ -74,46 +45,15 @@
                 <div class="card card-custom h-100">
                     <div class="bg-black d-flex flex-column align-items-center justify-content-center" style="height: 200px;">
                         <div class="icon-box"><i data-lucide="shield-check"></i></div>
-                        <small class="text-white fw-bold text-uppercase tracking-widest">Gun Safety</small>
+                        <small class="text-white fw-bold text-uppercase">Gun Safety</small>
                     </div>
                     <div class="card-gold-body">
                         <h3 class="h5 fw-bold text-uppercase fst-italic">basics: from safety</h3>
-                        <p class="small fw-bold m-0">learn the essentials for handling fire arms safely from checking if it's loaded to keeping your finger off the trigger</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-4">
-                <div class="card card-custom h-100">
-                    <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=400" class="card-img-top" alt="Legal" style="height: 200px; object-fit: cover;">
-                    <div class="card-gold-body">
-                        <h3 class="h5 fw-bold text-uppercase fst-italic">legal requirements</h3>
-                        <p class="small fw-bold m-0">understand the age limit, permits and documents you need before buying a gun</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-4">
-                <div class="card card-custom h-100">
-                    <img src="https://vivacious-gray-kaipt8citi.edgeone.app/images%20-%202026-02-20T231424.199.jpeg" class="card-img-top" alt="Storage" style="height: 200px; object-fit: cover;">
-                    <div class="card-gold-body">
-                        <h3 class="h5 fw-bold text-uppercase fst-italic">responsible ownership</h3>
-                        <p class="small fw-bold m-0">learn about proper storage, secure transport and preventing authorized user of your gun</p>
+                        <p class="small fw-bold m-0">Learn the essentials for handling firearms safely.</p>
                     </div>
                 </div>
             </div>
         </div>
-
-        <section class="text-center py-5">
-            <h3 class="text-gold fw-bold text-uppercase mb-3">Gun Shops & Registration Areas in Calabarzon</h3>
-            <p class="small mb-4 mx-auto" style="max-width: 700px;">
-                Interactive Google Map with marked gun shops/dealers and example PNP FEO/registration spot.
-                Always verify current licenses at <a href="https://feo.csg.pnp.gov.ph/" class="text-gold">feo.csg.pnp.gov.ph</a>.
-            </p>
-            <div class="map-wrapper shadow-lg">
-                <iframe src="https://www.google.com/maps/d/embed?mid=1BpgtTpX8uCzgm6ix4BklXCCen5_HERM" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-            </div>
-        </section>
 
     </main>
 
@@ -121,35 +61,9 @@
         ★ Feedback
     </button>
 
-    <footer class="footer mt-5">
-        <div class="container">
-            <div class="row gy-4">
-                <div class="col-md-3">
-                    <h5 class="text-gold fw-bold mb-3">WISE GUN</h5>
-                    <p class="small opacity-75">Promoting safe, responsible, and legal firearm ownership in the Philippines.</p>
-                </div>
-                <div class="col-md-3">
-                    <h6 class="text-gold text-uppercase small fw-bold mb-3">Quick Links</h6>
-                    <ul class="list-unstyled small">
-                        <li><a href="#" class="text-decoration-none text-light opacity-75">Home</a></li>
-                        <li><a href="#" class="text-decoration-none text-light opacity-75">About</a></li>
-                        <li><a href="#" class="text-decoration-none text-light opacity-75">Rules</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-3">
-                    <h6 class="text-gold text-uppercase small fw-bold mb-3">Contact</h6>
-                    <p class="small mb-1 opacity-75"><i data-lucide="mail" class="me-2" style="width:14px"></i> info@wisegun.ph</p>
-                    <p class="small opacity-75"><i data-lucide="phone" class="me-2" style="width:14px"></i> +63 (2) 8-123-4567</p>
-                </div>
-                <div class="col-md-3 text-md-end">
-                    <div class="mb-3">
-                        <i data-lucide="facebook" class="me-3"></i>
-                        <i data-lucide="instagram" class="me-3"></i>
-                        <i data-lucide="youtube"></i>
-                    </div>
-                    <p class="x-small opacity-50 mb-0">© 2026 Wise Gun. All rights reserved.</p>
-                </div>
-            </div>
+    <footer class="main-footer">
+        <div class="container text-center">
+            <p class="small opacity-50">&copy; 2026 Wise Gun. All rights reserved.</p>
         </div>
     </footer>
 
