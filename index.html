@@ -5,11 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wise Gun - Reliable Companion</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap-grid.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
 
     <style>
-        
         :root {
             --dark-bg: #262626;
             --darker-bg: #1a1a1a;
@@ -20,11 +19,10 @@
         body {
             background-color: var(--darker-bg);
             color: var(--light-text);
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
         }
 
-    
+        
         .custom-header {
             background-color: var(--dark-bg);
             padding: 0 2rem;
@@ -34,8 +32,8 @@
             justify-content: space-between;
             position: sticky;
             top: 0;
-            z-index: 1000;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+            z-index: 1050;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
         }
 
         .logo {
@@ -44,6 +42,7 @@
             font-weight: bold;
             letter-spacing: 2px;
             font-size: 1.2rem;
+            text-transform: uppercase;
         }
 
         .custom-nav a {
@@ -52,6 +51,7 @@
             margin: 0 15px;
             font-size: 0.9rem;
             transition: 0.3s;
+            font-weight: 500;
         }
 
         .custom-nav a:hover, .custom-nav a.active {
@@ -66,48 +66,25 @@
             text-decoration: none;
             font-weight: 600;
             font-size: 0.85rem;
+            margin-right: 15px;
         }
 
-        /* The Hero Slider (Keeping your Slide Track style) */
-        .hero-section {
-            margin-top: 2rem;
-            border-radius: 15px;
-            overflow: hidden;
-            position: relative;
-            height: 60vh;
-            background-color: #000;
+        
+        .carousel-item {
+            height: 65vh;
+            background-size: cover;
+            background-position: center;
         }
-
-        .slide-content {
+        .carousel-caption-custom {
             position: absolute;
             inset: 0;
-            background: linear-gradient(to right, rgba(0,0,0,0.8), transparent);
+            background: rgba(0,0,0,0.4);
             display: flex;
             align-items: center;
             padding-left: 10%;
         }
-
-        .slide-content h1 {
-            color: var(--accent-gold);
-            font-size: 4rem;
-            margin: 0;
-            letter-spacing: -2px;
-        }
-
-        /* Custom Footer */
-        .custom-footer {
-            background-color: var(--dark-bg);
-            padding: 3rem 0;
-            margin-top: 4rem;
-            text-align: center;
-            border-top: 1px solid rgba(200, 159, 62, 0.2);
-        }
-
-        .footer-links a {
-            color: var(--accent-gold);
-            text-decoration: none;
-            font-size: 0.8rem;
-            margin: 0 10px;
+        .carousel-indicators [data-bs-target] {
+            background-color: var(--accent-gold);
         }
     </style>
 </head>
@@ -117,65 +94,97 @@
     <header class="custom-header">
         <a href="index.html" class="logo">WISE GUN</a>
         
-        <nav class="custom-nav d-none d-md-block">
+        <nav class="custom-nav d-none d-lg-block">
             <a href="index.html" class="active">Home</a>
             <a href="Wisegun2.html">About & Explore</a>
             <a href="Wisegun3.html">Rules</a>
         </nav>
 
-        <div style="display: flex; align-items: center; gap: 20px;">
-            <a href="#" class="auth-btn">Log In / Sign Up</a>
-            <i data-lucide="menu" style="color: var(--accent-gold); cursor: pointer;"></i>
+        <div class="d-flex align-items-center">
+            <a href="#" class="auth-btn d-none d-sm-block">Log In / Sign Up</a>
+            <div class="d-flex gap-3">
+                <i data-lucide="search" style="color: var(--accent-gold); cursor: pointer;"></i>
+                <i data-lucide="menu" style="color: var(--accent-gold); cursor: pointer;"></i>
+            </div>
         </div>
     </header>
 
-    <main class="container">
-        <div class="row">
-            <div class="col-12">
-                <section class="hero-section shadow-lg">
-                    <div class="slide-content">
-                        <div>
-                            <h1>WISE GUN</h1>
-                            <p style="font-style: italic; font-size: 1.2rem; opacity: 0.8;">
-                                a reliable companion for guiding in buying and registering a gun.
-                            </p>
+    <main class="container mt-4">
+        
+        <div id="heroSlider" class="carousel slide carousel-fade shadow-lg rounded-4 overflow-hidden" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#heroSlider" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#heroSlider" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#heroSlider" data-bs-slide-to="2"></button>
+            </div>
+
+            <div class="carousel-inner">
+                <div class="carousel-item active" style="background-image: url('https://images.unsplash.com/photo-1595232063300-366f076191c9?auto=format&fit=crop&w=1200');">
+                    <div class="carousel-caption-custom">
+                        <div class="text-start">
+                            <h1 class="display-3 fw-bold text-uppercase" style="color: var(--accent-gold); letter-spacing: -2px;">Wise Gun</h1>
+                            <p class="h4 fst-italic opacity-75">a reliable companion for guiding in buying and registering a gun.</p>
                         </div>
                     </div>
-                </section>
+                </div>
+                <div class="carousel-item" style="background-image: url('https://images.unsplash.com/photo-1584285418504-0051b6d61081?auto=format&fit=crop&w=1200');">
+                    <div class="carousel-caption-custom">
+                        <div class="text-start">
+                            <h2 class="display-4 fw-bold text-uppercase" style="color: var(--accent-gold);">Expert Safety</h2>
+                            <p class="h5">Learn essential rules and practices for safe handling.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item" style="background-image: url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1200');">
+                    <div class="carousel-caption-custom">
+                        <div class="text-start">
+                            <h2 class="display-4 fw-bold text-uppercase" style="color: var(--accent-gold);">Legislation</h2>
+                            <p class="h5">Step-by-step instructions for legal registration.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#heroSlider" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#heroSlider" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
         </div>
 
-        <div class="row mt-5 g-4">
+        <div class="row mt-5 g-4 text-center">
             <div class="col-md-4">
-                <div style="background: var(--dark-bg); padding: 2rem; border-radius: 10px; border-left: 4px solid var(--accent-gold);">
-                    <h3 style="color: var(--accent-gold);">Security</h3>
-                    <p class="small">Safety is our top priority in firearm handling.</p>
+                <div class="p-4 rounded-3 border border-secondary h-100">
+                    <i data-lucide="shield" class="mb-3" style="color: var(--accent-gold)"></i>
+                    <h5 class="text-gold fw-bold">Verified Safety</h5>
+                    <p class="small opacity-75">Ensuring every owner knows the proper handling protocols.</p>
                 </div>
             </div>
             <div class="col-md-4">
-                <div style="background: var(--dark-bg); padding: 2rem; border-radius: 10px; border-left: 4px solid var(--accent-gold);">
-                    <h3 style="color: var(--accent-gold);">Legality</h3>
-                    <p class="small">We guide you through the official PNP FEO process.</p>
+                <div class="p-4 rounded-3 border border-secondary h-100">
+                    <i data-lucide="file-text" class="mb-3" style="color: var(--accent-gold)"></i>
+                    <h5 class="text-gold fw-bold">Legal Guidance</h5>
+                    <p class="small opacity-75">Direct links to PNP FEO and registration requirements.</p>
                 </div>
             </div>
             <div class="col-md-4">
-                <div style="background: var(--dark-bg); padding: 2rem; border-radius: 10px; border-left: 4px solid var(--accent-gold);">
-                    <h3 style="color: var(--accent-gold);">Community</h3>
-                    <p class="small">Connecting you with verified shops nationwide.</p>
+                <div class="p-4 rounded-3 border border-secondary h-100">
+                    <i data-lucide="map-pin" class="mb-3" style="color: var(--accent-gold)"></i>
+                    <h5 class="text-gold fw-bold">Shop Locator</h5>
+                    <p class="small opacity-75">Find the most reliable and authorized shops in Calabarzon.</p>
                 </div>
             </div>
         </div>
     </main>
 
-    <footer class="custom-footer">
-        <p style="font-size: 0.8rem; opacity: 0.5;">&copy; WISE GUN 2025 | Promoting Safe and Legal Firearm Ownership.</p>
-        <div class="footer-links">
-            <a href="index.html">Home</a>
-            <a href="Wisegun2.html">About</a>
-            <a href="Wisegun3.html">Safety</a>
+    <footer class="py-5 mt-5 bg-dark shadow-lg">
+        <div class="container text-center">
+            <p class="small text-secondary">&copy; WISE GUN 2026 | Safe and Legal Ownership</p>
         </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         lucide.createIcons();
     </script>
