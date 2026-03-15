@@ -2,7 +2,7 @@
 :root {
     --dark-bg: #262626;
     --darker-bg: #1a1a1a;
-    --accent-gold: #c89f3e; 
+    --accent-gold: #c89f3e;
     --light-text: #e0e0e0;
     --transition-speed: 0.3s;
 }
@@ -10,7 +10,7 @@
 body {
     background-color: var(--darker-bg);
     color: var(--light-text);
-    font-family: 'Segoe UI', sans-serif;
+    font-family: sans-serif;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -40,8 +40,7 @@ body {
 .footer-link { color: var(--light-text); text-decoration: none; font-size: 0.9rem; transition: var(--transition-speed); }
 .footer-link:hover { color: var(--accent-gold); }
 
-/* --- Page 1 (Home) Specific --- */
-/* Carousel Styles */
+/* --- Home Page Specific (Carousel) --- */
 .carousel-item {
     height: 90vh;
     min-height: 600px;
@@ -56,7 +55,7 @@ body {
     padding: 0 10%;
 }
 
-/* --- Page 2 (About & Explore) Specific --- */
+/* --- Page 2 Specific --- */
 .section-header {
     border-top: 1px solid rgba(200, 159, 62, 0.3);
     border-bottom: 1px solid rgba(200, 159, 62, 0.3);
@@ -105,7 +104,7 @@ body {
 }
 .btn-dark-custom:hover { opacity: 0.9; color: var(--accent-gold); }
 
-/* --- Responsive --- */
+/* --- Responsive Fixes --- */
 @media (max-width: 768px) {
     .carousel-item { height: 60vh; }
-        }
+}
